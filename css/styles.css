@@ -1,5 +1,7 @@
 /* Paralax  */
-
+:root{
+    --morado: #7952B3;
+}
 .paralax{
     box-sizing: border-box;
     min-height: 100vh;
@@ -25,4 +27,40 @@
     display: block;
     background-image: url(../img/paralax.jpg);
     background-size: cover;
+}
+
+/* Estilos Card */
+.image-wrapper-card{
+    position: relative;
+    /** Relacion de aspecto
+     * 16:9 -> 56.25%
+     * 3:2 -> 66.66%
+     * 4:3 -> 75%
+     * 1:1 -> 100% */
+    padding-bottom: 75%;
+}
+.image-wrapper-card img{
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.card{
+    background-color: #191c1f;
+}
+.card-body .card-title{
+    color: #fff;
+}
+.card-body p{
+    margin: 0;
+    color: #fff;
+}
+p.event-price-card{
+    font-size: 22px;
+    color: var(--morado);
+}
+.btn-card{
+    background-color: var(--morado);
+    margin-top: 10px;
+    color: #fff;
 }
