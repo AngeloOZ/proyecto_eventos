@@ -9,9 +9,6 @@
     --ft-poppins: 'Poppins', sans-serif;
 }
 
-body {
-    position: relative;
-}
 
 /* Paralax  */
 .paralax * {

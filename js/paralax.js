@@ -8,7 +8,6 @@ window.addEventListener('scroll',()=>{
       let auxHg = hg-scroll;
       let op = (auxHg /hg)
       b.style.opacity = op;
-	console.log(op)
     }
 
 

@@ -3,7 +3,7 @@
   include_once 'layout/navegacion.php';
 ?>
         <!-- Product section-->
-        <section class="py-5 bg-dark" >
+        <section class="py-5 " >
             <div class="detalle-evento">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
