@@ -17,4 +17,9 @@
     <!-- styles of this proyect   -->
  
     <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&family=Raleway:wght@300&display=swap" rel="stylesheet">
 </head>

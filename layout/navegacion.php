@@ -20,7 +20,7 @@
                         </li>
                     </ul>
                     <a href="carrito.php" style="text-decoration: none;" class="d-flex">
-                        <button class="btn btn-outline-info" type="submit">
+                        <button class="btn btn-card" type="submit">
                             <i class="bi-cart-fill me-1"></i>
                             Carrito
                             <span class="badge bg-dark text-white ms-1 rounded-pill">
