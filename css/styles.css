@@ -1,9 +1,15 @@
-/* Paralax  */
+
+@import url('https://fonts.googleapis.com/css2?family=Baskervville&family=Poppins:wght@300;400;500;700&display=swap');
+
 :root{
     --morado: #7952B3;
     --fkan:  'Charmonman', cursive;
     --frale: 'Raleway', sans-serif;
+    --ft-baskervville: 'Baskervville', serif;
+    --ft-poppins: 'Poppins', sans-serif;
 }
+
+/* Paralax  */
 .paralax *{
  color: white;
 }
@@ -38,7 +44,10 @@
     }
 }
 
-/* Estilos Card */
+
+/* -------------------------------------------------------------------------- */
+/*                               Estilos de card                              */
+/* -------------------------------------------------------------------------- */
 .image-wrapper-card{
     position: relative;
     /** Relacion de aspecto
@@ -59,20 +68,29 @@
 }
 .card-body .card-title{
     color: #fff;
+    font-family: var(--ft-baskervville);
+    /* font-family: var(--bs-font-sans-serif); */
+    font-weight: bold;
 }
 .card-body p{
     margin: 0;
     color: #fff;
+    font-family: var(--ft-poppins);
+    font-weight: 300;
 
 }
 p.event-price-card{
     font-size: 22px;
     color: var(--morado);
+    font-family: var(--ft-poppins);
+    font-weight: 700;
 }
 .btn-card{
     background-color: var(--morado);
     margin-top: 10px;
     color: #fff;
+    font-family: var(--ft-poppins);
+    font-weight: 400;
 }
 
 
