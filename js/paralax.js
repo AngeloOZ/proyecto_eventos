@@ -1,11 +1,16 @@
+const a = document.querySelector('.paralax')
+const b = document.querySelector('.contenido-paralax')
 
-let $paralax = document.querySelector('.paralax');
-let $paralax_c = document.querySelector('.contenido-paralax');
+window.addEventListener('scroll',()=>{
+    let scroll = document.documentElement.scrollTop + 100
+    let hg = a.getBoundingClientRect().height
+    if(scroll <= hg){
+      let auxHg = hg-scroll;
+      let op = (auxHg /hg)
+      b.style.opacity = op;
+	console.log(op)
+    }
 
-function Scroll(){
-    let ScrollTop = document.documentElement.scrollTop
-    $paralax.style.transform = 'translateY('+ScrollTop* 0+'px)';
-    $paralax_c.style.transform = 'translateY('+ScrollTop* 0.3+'px)';
-}
 
-window.addEventListener('scroll',Scroll);
+
+});

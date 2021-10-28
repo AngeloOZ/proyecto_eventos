@@ -81,7 +81,7 @@
 }
 .card-body .card-title{
     color: #fff;
-    font-family: var(--ft-baskervville);
+    font-family: var(--fkan);
     /* font-family: var(--bs-font-sans-serif); */
     font-weight: bold;
 }

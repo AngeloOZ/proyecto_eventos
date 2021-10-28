@@ -3,7 +3,8 @@
   include_once 'layout/navegacion.php';
 ?>
         <!-- Product section-->
-        <section class="py-5">
+        <section class="py-5 bg-dark" >
+            <div class="detalle-evento">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://media.istockphoto.com/photos/dancing-friends-picture-id501387734?b=1&k=20&m=501387734&s=170667a&w=0&h=TVaT6l5ApnSxVDgP0027JimUnUfbJYkBRCcVA2DGXg8=" alt="..." /></div>
@@ -69,6 +70,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
         <!-- Related items section-->
