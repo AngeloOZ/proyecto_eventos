@@ -1,36 +1,43 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Baskervville&family=Poppins:wght@300;400;500;700&display=swap');
 
-:root{
+:root {
     --morado: #7952B3;
-    --fkan:  'Charmonman', cursive;
+    --morado-dark: #61428f;
+    --fkan: 'Charmonman', cursive;
     --frale: 'Raleway', sans-serif;
     --ft-baskervville: 'Baskervville', serif;
     --ft-poppins: 'Poppins', sans-serif;
 }
 
-/* Paralax  */
-.paralax *{
- color: white;
- z-index: 3;
- position: relative;
+body {
+    position: relative;
 }
-.paralax h1{
+
+/* Paralax  */
+.paralax * {
+    color: white;
+    z-index: 3;
+    position: relative;
+}
+
+.paralax h1 {
     font: 60px var(--fkan);
 }
 
-.paralax P{
+.paralax P {
     font: 20px var(--frale);
 }
-.paralax{
+
+.paralax {
     background-image: url(../img/paralax.jpg);
     background-size: cover;
     width: 100%;
     height: 100vh;
     text-align: center;
-    
+
 }
-.paralax::before{
+
+.paralax::before {
     content: "";
     position: absolute;
     background-color: black;
@@ -42,7 +49,7 @@
     z-index: 1;
 }
 
-.paralax .contenido-paralax{
+.paralax .contenido-paralax {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -52,7 +59,7 @@
 }
 
 @media (max-width: 700px) {
-    .paralax h1{
+    .paralax h1 {
         font-size: 30px;
     }
 }
@@ -61,7 +68,7 @@
 /* -------------------------------------------------------------------------- */
 /*                               Estilos de card                              */
 /* -------------------------------------------------------------------------- */
-.image-wrapper-card{
+.image-wrapper-card {
     position: relative;
     /** Relacion de aspecto
      * 16:9 -> 56.25%
@@ -70,35 +77,41 @@
      * 1:1 -> 100% */
     padding-bottom: 75%;
 }
-.image-wrapper-card img{
+
+.image-wrapper-card img {
     position: absolute;
     object-fit: cover;
     width: 100%;
     height: 100%;
 }
-.card{
+
+.card {
     background-color: #191c1f;
 }
-.card-body .card-title{
+
+.card-body .card-title {
     color: #fff;
     font-family: var(--ft-baskervville);
     /* font-family: var(--bs-font-sans-serif); */
     font-weight: bold;
 }
-.card-body p{
+
+.card-body p {
     margin: 0;
     color: #fff;
     font-family: var(--ft-poppins);
     font-weight: 300;
 
 }
-p.event-price-card{
+
+p.event-price-card {
     font-size: 22px;
     color: var(--morado);
     font-family: var(--ft-poppins);
     font-weight: 700;
 }
-.btn-card{
+
+.btn-card {
     background-color: var(--morado);
     margin-top: 10px;
     color: #fff;
@@ -106,6 +119,59 @@ p.event-price-card{
     font-weight: 400;
 }
 
-nav{
+nav {
     z-index: 2;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                       Estidos boton carrito y scroll                       */
+/* -------------------------------------------------------------------------- */
+.container-button-fixed {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    right: 0;
+}
+
+.btn-float {
+    flex: 1;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 22px;
+    background-color: var(--morado);
+    border: var(--morado);
+}
+.btn-float#btn-cart:first-child{
+    border-right: 2px solid #000;
+}
+
+.btn-float:hover {
+    color: #fff;
+    background-color: var(--morado-dark);
+    border-color: var(--morado-dark);
+}
+
+footer#footer {
+    margin-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+    footer#footer {
+        margin-bottom: 0px;
+    }
+    .container-button-fixed{
+        flex-direction: column;
+        height: 70px;
+        width: 60px;
+    }
+    .container-button-fixed.two-button{
+        height: 140px;
+    }
+    .btn-float#btn-cart:first-child{
+        border: unset;
+        border-bottom: 2px solid #000;
+    }
 }

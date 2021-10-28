@@ -20,6 +20,7 @@ window.addEventListener('load', (event) => {
 /* -------------------------------------------------------------------------- */
 function initFunctions() {
     getEventData();
+    scrollToTop();
 }
 
 async function getEventData() {
@@ -51,3 +52,14 @@ async function getEventData() {
     });
     cardContainer.appendChild(fragment);
 }
+
+function scrollToTop() {
+    const btnScrollTop = document.querySelector('#btn-top');
+    btnScrollTop.addEventListener('click', function(){
+        document.documentElement.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    })
+}
+

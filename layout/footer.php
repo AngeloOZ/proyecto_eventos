@@ -1,5 +1,10 @@
-        <!-- Footer -->
-    <footer class="bg-dark text-center text-white">
+    <!-- Button cart and top -->
+    <div class="container-button-fixed">
+        <!-- <button class="btn-float" id="btn-cart"><i class="bi bi-cart-fill"></i></button> -->
+        <button class="btn-float" id="btn-top"><i class="bi bi-caret-up-fill"></i></button>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white" id="footer">
         <!-- Grid container -->
         <div class="container p-4 pb-0">
             <!-- Section: Social media -->
