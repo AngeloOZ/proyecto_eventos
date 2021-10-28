@@ -6,13 +6,15 @@
 }
 .paralax *{
  color: white;
+ z-index: 3;
+ position: relative;
 }
 .paralax h1{
     font: 60px var(--fkan);
 }
 
 .paralax P{
-    font-family: var(--frale);
+    font: 20px var(--frale);
 }
 .paralax{
     background-image: url(../img/paralax.jpg);
@@ -21,6 +23,17 @@
     height: 100vh;
     text-align: center;
     
+}
+.paralax::before{
+    content: "";
+    position: absolute;
+    background-color: black;
+    opacity: 0.4;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
 }
 
 .paralax .contenido-paralax{
@@ -75,5 +88,6 @@ p.event-price-card{
     color: #fff;
 }
 
-
-
+nav{
+    z-index: 2;
+}
