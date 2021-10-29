@@ -12,13 +12,13 @@
   </div>
   <div class="carousel-inner " style="height: 90vh;">
     <di4 class="carousel-item active ">
-      <img src="../img/slider1.png" class="h-100 w-100  " alt="...">
+      <img src="./img/slider1.jpg" class="h-100 w-100  " alt="...">
     </di4>
     <di4 class="carousel-item">
-      <img src="../img/slider2.png " class="h-100 w-100  " alt="...">
+      <img src="./img/slider2.jpg" class="h-100 w-100  " alt="...">
     </di4>
     <div class="carousel-item">
-      <img src="../img/slider3.png " class="h-100 w-100  " alt="...">
+      <img src="./img/slider3.jpg" class="h-100 w-100  " alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#inidicador" data-bs-slide="prev">
