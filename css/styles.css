@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Baskervville&family=Poppins:wght@300;400;500;700&display=swap');
-
 :root {
     --morado: #7952B3;
     --morado-dark: #61428f;
@@ -8,11 +6,14 @@
     --ft-baskervville: 'Baskervville', serif;
     --ft-poppins: 'Poppins', sans-serif;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
 
-/* Paralax  */
+/* -------------------------------------------------------------------------- */
+/*                            Estilos para paralax                            */
+/* -------------------------------------------------------------------------- */
 .paralax * {
     color: white;
     z-index: 3;
@@ -132,7 +133,7 @@ nav {
     height: 50px;
     bottom: 0;
     right: 0;
-    z-index: 1000000000000000000000;
+    z-index: 100;
 }
 
 .btn-float {
@@ -144,38 +145,46 @@ nav {
     background-color: var(--morado);
     border: var(--morado);
 }
-.btn-float#btn-cart:first-child{
+
+.btn-float#btn-cart:first-child {
     border-right: 2px solid #000;
 }
+
 .btn-float:hover {
     color: #fff;
     background-color: var(--morado-dark);
     border-color: var(--morado-dark);
 }
+
 footer#footer {
     margin-bottom: 50px;
 }
+
 @media (min-width: 768px) {
     footer#footer {
         margin-bottom: 0px;
     }
-    .container-button-fixed{
+
+    .container-button-fixed {
         flex-direction: column;
         height: 70px;
         width: 60px;
     }
-    .container-button-fixed.two-button{
+
+    .container-button-fixed.two-button {
         height: 140px;
     }
-    .btn-float#btn-cart:first-child{
+
+    .btn-float#btn-cart:first-child {
         border: unset;
         border-bottom: 2px solid #000;
     }
 }
+
 /* -------------------------------------------------------------------------- */
 /*                           Estilos card productos                           */
 /* -------------------------------------------------------------------------- */
-.image-wrapper-card-pr{
+.image-wrapper-card-pr {
     margin: 6px;
     position: relative;
     /** Relacion de aspecto
@@ -185,6 +194,7 @@ footer#footer {
      * 1:1 -> 100% */
     padding-bottom: 75%;
 }
+
 .image-wrapper-card-pr img {
     border-radius: 2px;
     position: absolute;
@@ -192,42 +202,50 @@ footer#footer {
     width: 100%;
     height: 100%;
 }
-.card-title-pr{
+
+.card-title-pr {
     color: #fff;
     font-family: var(--ft-poppins);
     font-size: 24px;
     margin-bottom: 10px;
 }
-p.price-pr-card{
+
+p.price-pr-card {
     font-size: 22px;
     font-family: var(--ft-poppins);
     font-weight: 500;
 }
-p.category-pr{
+
+p.category-pr {
     font-weight: 300;
     font-size: 16px;
     margin-bottom: 5px;
 }
-p.price-pr-card span{
+
+p.price-pr-card span {
     font-weight: 500;
 }
-.contenedor-num-pr{
+
+.contenedor-num-pr {
     display: flex;
     width: 85px;
     height: 35px;
     border: 1px solid var(--morado);
     border-radius: 10px;
 }
+
 .contenedor-num-pr p,
-.contenedor-num-pr button{
+.contenedor-num-pr button {
     flex: 1;
 }
-.text-num-pr{
+
+.text-num-pr {
     text-align: center;
     line-height: 35px;
 }
+
 .btn-contador-add,
-.btn-contador-rest{
+.btn-contador-rest {
     background-color: transparent;
     border: none;
     outline: none;
@@ -235,20 +253,24 @@ p.price-pr-card span{
     font-weight: 500;
     font-size: 18px;
 }
+
 .btn-contador-add:hover,
-.btn-contador-rest:hover{
+.btn-contador-rest:hover {
     box-shadow: 0 0 6px var(--morado);
 }
-.btn-contador-rest{
+
+.btn-contador-rest {
     border-right: 1px solid var(--morado);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
-.btn-contador-add{
+
+.btn-contador-add {
     border-left: 1px solid var(--morado);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
 .btn-card-cart {
     background-color: var(--morado);
     height: 35px;
@@ -259,59 +281,67 @@ p.price-pr-card span{
     width: 110px;
     border-radius: 10px;
 }
-.btn-card-cart:hover{
+
+.btn-card-cart:hover {
     color: #fff;
 
 }
-.contenedor-btn-count{
+
+.contenedor-btn-count {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin: 10px 0;
     margin-top: 15px;
 }
-.card-product{
+
+.card-product {
     min-width: 250px;
 }
 
 /* -------------------------------------------------------------------------- */
 /*                           Estilos detalle eventos                          */
 /* -------------------------------------------------------------------------- */
-#complete-detail{
-    background-color: #191c1f ;
+#complete-detail {
+    background-color: #191c1f;
 }
-.titulo-eve{
-    font-family:  var(--fkan);
+
+.titulo-eve {
+    font-family: var(--fkan);
     padding-bottom: 0.5em;
 }
-.ubi-eve{
+
+.ubi-eve {
     padding-top: 1em;
     font-weight: bold;
     font-family: var(--frale);
- 
+
 }
-.time{
+
+.time {
     font-family: var(--frale);
     font-size: 20px;
     font-weight: bold;
 }
-.time span{
+
+.time span {
     font-weight: normal;
 }
-.precio-eve{
+
+.precio-eve {
     color: var(--morado);
     font-weight: 500;
     font-family: var(--ft-poppins);
 
 }
 
-.btn_reserva_eve{
+.btn_reserva_eve {
     background-color: var(--morado);
     font-family: var(--frale);
     border: none;
     font-weight: bold;
 }
 
-.btn_reserva_eve:hover{
+.btn_reserva_eve:hover {
     background-color: var(--morado-dark);
 }

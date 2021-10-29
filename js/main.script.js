@@ -10,7 +10,9 @@ initFunctions();
 
 // Esperamos a que cargue toda la página
 window.addEventListener('load', (event) => {
-
+    const loader = document.getElementById('loader');
+    loader.classList.remove('active-loader');
+    console.log('100% cargado')
 });
 
 

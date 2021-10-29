@@ -1,4 +1,17 @@
 <body class="bg-dark">
+    <div class="loader-main active-loader bg-dark" id="loader">
+        <div class="loader">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="lds-ellipsis">
+                <p>Cargando</p>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container px-4 px-lg-5">
@@ -21,7 +34,7 @@
                         </ul>
                     </li>
                 </ul>
-            
+
             </div>
         </div>
     </nav>
