@@ -273,3 +273,45 @@ p.price-pr-card span{
 .card-product{
     min-width: 250px;
 }
+
+/* -------------------------------------------------------------------------- */
+/*                           Estilos detalle eventos                          */
+/* -------------------------------------------------------------------------- */
+#complete-detail{
+    background-color: #191c1f ;
+}
+.titulo-eve{
+    font-family:  var(--fkan);
+    padding-bottom: 0.5em;
+}
+.ubi-eve{
+    padding-top: 1em;
+    font-weight: bold;
+    font-family: var(--frale);
+ 
+}
+.time{
+    font-family: var(--frale);
+    font-size: 20px;
+    font-weight: bold;
+}
+.time span{
+    font-weight: normal;
+}
+.precio-eve{
+    color: var(--morado);
+    font-weight: 500;
+    font-family: var(--ft-poppins);
+
+}
+
+.btn_reserva_eve{
+    background-color: var(--morado);
+    font-family: var(--frale);
+    border: none;
+    font-weight: bold;
+}
+
+.btn_reserva_eve:hover{
+    background-color: var(--morado-dark);
+}

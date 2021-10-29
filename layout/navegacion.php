@@ -1,4 +1,4 @@
-<body class="">
+<body class="bg-dark">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container px-4 px-lg-5">
@@ -21,17 +21,7 @@
                         </ul>
                     </li>
                 </ul>
-                <a href="carrito.php" style="text-decoration: none;" class="d-flex">
-                    <button class="btn btn-card" type="submit">
-                        <i class="bi-cart-fill me-1"></i>
-                        Carrito
-                        <span class="badge bg-dark text-white ms-1 rounded-pill">
-                            <?php
-                            echo (empty($_SESSION['CARRITO'])) ? 0 : count($_SESSION['CARRITO']);
-                            ?>
-                        </span>
-                    </button>
-                </a>
+            
             </div>
         </div>
     </nav>

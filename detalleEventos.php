@@ -1,27 +1,66 @@
 <?php
 include_once 'layout/header.php';
 include_once 'layout/navegacion.php';
+
+$id =  base64_decode($_GET['id']);
+$datos = file_get_contents("https://roman-company.com/TrailerMovilApiRest/view/evento.php/unico?id_evento=".$id);
+$products = json_decode($datos, true)['datos'][0];
+
+// JSON VARIABLES 
+
+
+$nombre = $products['nombre'];
+$detalle = $products['detalle'];
+$ubicacion = $products['ubicacion'];
+$foto= $products['foto'];
+$array_tiempo = explode(" ",$products['fecha_evento']);
+$fecha_evento = $array_tiempo[0];
+$hora_evento = $array_tiempo[1];
+$precio= $products['precio'];
+$estado = $products['estado'];
+
+
 ?>
 <!-- Product section-->
-<section class="py-5 ">
+<section id= "complete-detail" class="py-5 text-white">
     <div class="detalle-evento">
-        <div class="container px-4 px-lg-5 my-5">
+        <div class="container px-4 px-lg-5 ">
             <div class="row gx-4 gx-lg-5 align-items-center">
-                <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://media.istockphoto.com/photos/dancing-friends-picture-id501387734?b=1&k=20&m=501387734&s=170667a&w=0&h=TVaT6l5ApnSxVDgP0027JimUnUfbJYkBRCcVA2DGXg8=" alt="..." /></div>
+                <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src= "<?php echo $foto?>"  alt="..." /></div>
                 <div class="col-md-6">
-                    <div class="small mb-1"><?php echo base64_decode($_GET['id']); ?></div>
-                    <h1 class="display-5 fw-bolder">Evento 1.0</h1>
-                    <div class="fs-5 mb-5">
-                        <span class="text-decoration-line-through">$45.00</span>
-                        <span>$40.00</span>
+
+
+                    <h1 class="display-5 fw-bolder titulo-eve" ><?php echo $nombre ?></h1>
+                    <div class="row">
+                    <div class="col-6">
+                        <p class="time">Fecha:<span>  <?php echo $fecha_evento ?> </span></p>
                     </div>
-                    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
+                    <div class="col-6">
+                        <p class="time">Hora:<span>  <?php echo $hora_evento ?> </span></p>
+                    </div>
+        
+                    <div class="fs-1 precio-eve">
+                        <span><?php echo  '$'.$precio ?></span>
+                    
+                    </div>
+                    <div class="row ubi-eve">
+                  <span> <?php echo $ubicacion ?> </span>
+                        </div>
+                    <p class="lead"><?php echo $detalle ?></p>
                     <div class="d-flex">
+                        <div col>
+                            <
+                        </div>
                         <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                        <div col>
+                            >
+                        </div>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <div class="col-6">
+                        <button type="button" class="btn btn-primary btn_reserva_eve" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Reservar
-                        </button>
+                        </button>         
+                        </div>
                     </div>
                 </div>
             </div>
@@ -29,7 +68,7 @@ include_once 'layout/navegacion.php';
     </div>
 </section>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content">
             <div class="modal-header">
@@ -62,7 +101,7 @@ include_once 'layout/navegacion.php';
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- Related items section-->
 <section class="py-5">
