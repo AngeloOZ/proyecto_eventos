@@ -66,25 +66,19 @@ $productos = json_decode($data)->datos;
   </div>
 </section>
 <div class="container-button-fixed two-button">
-    <button class="btn-float" id="btn-cart"><i class="bi bi-cart-fill"></i></button>
+    <button class="btn-float" id="btn-cart" data-pushbar-target="right"><i class="bi bi-cart-fill"></i></button>
     <button class="btn-float" id="btn-top"><i class="bi bi-caret-up-fill"></i></button>
 </div>
-<!-- <div class="pushbar_main_content">
-      Main content of the page
+<!-- pushbar -->
+<aside data-pushbar-id="right" data-pushbar-direction="right" style="width:400px">
+		<div class="title"><span data-pushbar-close class="close push_right"></span> Carrito</div>
+</aside>
 
-      <button data-pushbar-target="mypushbar1">
-      Open my pushbar 1
-      </button>
-
-      <button data-pushbar-target="mypushbar2">
-      Open my pushbar 2
-      </button>
-  </div> -->
 <script type="text/javascript">
-  const pushbar = new Pushbar({
-        blur:true,
-        overlay:true,
-      });
+		const pushbar = new Pushbar({
+			blur: true,
+			overlay: true,
+		});
 </script>
 <?php
 include_once 'layout/footer.php';
