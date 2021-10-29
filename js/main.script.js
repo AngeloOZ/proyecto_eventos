@@ -12,6 +12,10 @@ initFunctions();
 window.addEventListener('load', (event) => {
     const loader = document.getElementById('loader');
     loader.classList.remove('active-loader');
+    setTimeout(() =>{
+        // loader.style.display = 'none';
+        loader.remove();
+    },600)
     console.log('100% cargado')
 });
 
