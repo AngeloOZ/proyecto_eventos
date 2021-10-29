@@ -58,6 +58,15 @@ html {
     justify-content: center;
 }
 
+img.img-carousel {
+    max-height: 610px;
+    object-fit: cover;
+    image-rendering: auto;
+}
+.bg-btn-carousel:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
 @media (max-width: 700px) {
     .paralax h1 {
         font-size: 30px;
@@ -184,6 +193,9 @@ footer#footer {
 /* -------------------------------------------------------------------------- */
 /*                           Estilos card productos                           */
 /* -------------------------------------------------------------------------- */
+.text-productos{
+    color: #fff;
+}
 .image-wrapper-card-pr {
     margin: 6px;
     position: relative;
