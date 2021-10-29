@@ -19,7 +19,6 @@ include_once 'layout/navegacion.php';
     </div>
 </div>
 <div class="container-button-fixed">
-    <!-- <button class="btn-float" id="btn-cart"><i class="bi bi-cart-fill"></i></button> -->
     <button class="btn-float" id="btn-top"><i class="bi bi-caret-up-fill"></i></button>
 </div>
 <!-- Contenedor card />-->

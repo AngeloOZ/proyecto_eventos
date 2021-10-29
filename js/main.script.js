@@ -27,6 +27,8 @@ function initFunctions() {
 async function getEventData() {
     const fragment = document.createDocumentFragment();
     const cardContainer = document.getElementById('container-cards');
+    if(!cardContainer) return;
+
     const url = 'https://roman-company.com/TrailerMovilApiRest/view/evento.php?estado=active';
     const request = await fetch(url);
     const requestJson = await request.json();
@@ -56,6 +58,7 @@ async function getEventData() {
 
 function scrollToTop() {
     const btnScrollTop = document.getElementById('btn-top');
+    if(!btnScrollTop) return;
     btnScrollTop.addEventListener('click', () => {
         window.scrollTo({
             top: 0,
@@ -81,3 +84,18 @@ function OpacityParallax() {
     });
 }
 
+function addContadorProducts(event){
+    text = event.previousElementSibling;
+    number = Number.parseInt(text.innerText);
+    number++;
+    text.innerText = number;
+}
+function subtractContadorProducts(event){
+    text = event.nextElementSibling;
+    number = Number.parseInt(text.innerText);
+    number--;
+    if(number < 0){
+        number = 0;
+    }
+    text.innerText = number;
+}

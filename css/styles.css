@@ -147,17 +147,14 @@ nav {
 .btn-float#btn-cart:first-child{
     border-right: 2px solid #000;
 }
-
 .btn-float:hover {
     color: #fff;
     background-color: var(--morado-dark);
     border-color: var(--morado-dark);
 }
-
 footer#footer {
     margin-bottom: 50px;
 }
-
 @media (min-width: 768px) {
     footer#footer {
         margin-bottom: 0px;
@@ -174,4 +171,105 @@ footer#footer {
         border: unset;
         border-bottom: 2px solid #000;
     }
+}
+/* -------------------------------------------------------------------------- */
+/*                           Estilos card productos                           */
+/* -------------------------------------------------------------------------- */
+.image-wrapper-card-pr{
+    margin: 6px;
+    position: relative;
+    /** Relacion de aspecto
+     * 16:9 -> 56.25%
+     * 3:2 -> 66.66%
+     * 4:3 -> 75%
+     * 1:1 -> 100% */
+    padding-bottom: 75%;
+}
+.image-wrapper-card-pr img {
+    border-radius: 2px;
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.card-title-pr{
+    color: #fff;
+    font-family: var(--ft-poppins);
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+p.price-pr-card{
+    font-size: 22px;
+    font-family: var(--ft-poppins);
+    font-weight: 500;
+}
+p.category-pr{
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+p.price-pr-card span{
+    font-weight: 500;
+}
+.contenedor-num-pr{
+    display: flex;
+    width: 85px;
+    height: 35px;
+    border: 1px solid var(--morado);
+    border-radius: 10px;
+}
+.contenedor-num-pr p,
+.contenedor-num-pr button{
+    flex: 1;
+}
+.text-num-pr{
+    text-align: center;
+    line-height: 35px;
+}
+.btn-contador-add,
+.btn-contador-rest{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+}
+.btn-contador-add:hover,
+.btn-contador-rest:hover{
+    box-shadow: 0 0 6px var(--morado);
+}
+.btn-contador-rest{
+    border-right: 1px solid var(--morado);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.btn-contador-add{
+    border-left: 1px solid var(--morado);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.btn-card-cart {
+    background-color: var(--morado);
+    height: 35px;
+    border: none;
+    color: #fff;
+    font-family: var(--ft-poppins);
+    font-weight: 400;
+    width: 110px;
+    border-radius: 10px;
+}
+.btn-card-cart:hover{
+    color: #fff;
+
+}
+.contenedor-btn-count{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0;
+    margin-top: 15px;
+}
+.card-product{
+    min-width: 250px;
 }
