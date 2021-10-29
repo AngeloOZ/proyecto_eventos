@@ -18,8 +18,8 @@ include_once 'layout/navegacion.php';
         <div class="row g-5 d-flex justify-content-center justify-content-md-evenly" id="container-cards"> </div>
     </div>
 </div>
-<div class="container-button-fixed two-button">
-    <button class="btn-float" id="btn-cart"><i class="bi bi-cart-fill"></i></button>
+<div class="container-button-fixed">
+    <!-- <button class="btn-float" id="btn-cart"><i class="bi bi-cart-fill"></i></button> -->
     <button class="btn-float" id="btn-top"><i class="bi bi-caret-up-fill"></i></button>
 </div>
 <!-- Contenedor card />-->

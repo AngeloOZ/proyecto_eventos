@@ -8,7 +8,9 @@
     --ft-baskervville: 'Baskervville', serif;
     --ft-poppins: 'Poppins', sans-serif;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 
 /* Paralax  */
 .paralax * {
@@ -130,6 +132,7 @@ nav {
     height: 50px;
     bottom: 0;
     right: 0;
+    z-index: 1000000000000000000000;
 }
 
 .btn-float {

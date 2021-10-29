@@ -20,6 +20,7 @@ window.addEventListener('load', (event) => {
 /* -------------------------------------------------------------------------- */
 function initFunctions() {
     getEventData();
+    OpacityParallax();
     scrollToTop();
 }
 
@@ -33,7 +34,7 @@ async function getEventData() {
 
     events.forEach(event => {
         const cardEvent = document.createElement('DIV');
-        cardEvent.classList.add('col-12','col-sm-6','col-md-5','col-lg-4');
+        cardEvent.classList.add('col-12', 'col-sm-6', 'col-md-5', 'col-lg-4');
         cardEvent.innerHTML = `
         <div class="card m-auto border-0">
             <div class="image-wrapper-card">
@@ -44,7 +45,7 @@ async function getEventData() {
                 <p class="event-price-card"><i class="bi bi-currency-dollar"></i><strong>${event.precio}</strong></p=>
                 <p><i class="bi bi-calendar-date"></i> <strong>${event.fecha_evento.split(' ')[0]}</strong></p>
                 <p><i class="bi bi-geo-alt-fill"></i> <strong>${event.ubicacion}</strong></p>
-                <a href="#" class="btn btn-card">Ver más</a>
+                <a href="${location.origin+'/proyecto_eventos/detalleEventos?id='+btoa(event.id_evento)}" class="btn btn-card">Ver más</a>
             </div>
         </div>
         `;
@@ -54,12 +55,29 @@ async function getEventData() {
 }
 
 function scrollToTop() {
-    const btnScrollTop = document.querySelector('#btn-top');
-    btnScrollTop.addEventListener('click', function(){
-        document.documentElement.scrollTo({
+    const btnScrollTop = document.getElementById('btn-top');
+    btnScrollTop.addEventListener('click', () => {
+        window.scrollTo({
             top: 0,
-            behavior: "smooth"
+            behavior: 'smooth'
         });
-    })
+    });
+}
+
+function OpacityParallax() {
+    const a = document.querySelector('.paralax')
+    const b = document.querySelector('.contenido-paralax')
+
+    if(!a || !b) return;
+
+    window.addEventListener('scroll', () => {
+        let scroll = document.documentElement.scrollTop + 100
+        let hg = a.getBoundingClientRect().height
+        if (scroll <= hg) {
+            let auxHg = hg - scroll;
+            let op = (auxHg / hg)
+            b.style.opacity = op;
+        }
+    });
 }
 
