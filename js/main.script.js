@@ -28,6 +28,7 @@ function initFunctions() {
     getEventData();
     OpacityParallax();
     scrollToTop();
+    addProductCart();
 }
 
 async function getEventData() {
@@ -104,4 +105,16 @@ function subtractContadorProducts(event){
         number = 0;
     }
     text.innerText = number;
+}
+function addProductCart(){
+    const productContainer = document.getElementById("container-productos");
+    if(!productContainer) return;
+   
+    productContainer.addEventListener("click", e =>{
+        if(e.target.classList.contains('btn-add-cart')){
+            const idMenu = e.target.dataset.idMenu;
+            console.log(idMenu);
+            alert("id menu "+ idMenu);
+        }
+    })
 }

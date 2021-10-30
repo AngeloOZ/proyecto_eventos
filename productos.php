@@ -30,10 +30,10 @@ $productos = json_decode($data)->datos;
     <div class="row">
         <h2 class="col-12 text-center mb-4 text-productos">Sección productos</h2>
     </div>
-    <div class="row g-4 d-flex justify-content-center justify-content-md-evenly" id="container-productos">
+    <div class="row g-4 p-3 d-flex justify-content-center" id="container-productos">
         <?php foreach ($productos as $producto) : ?>
             <!-- card -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="col-12 col-sm-6 col-md-4">
                 <div class="card m-auto border-0">
                     <div class="image-wrapper-card-pr">
                         <img src="<?php echo $producto->foto_menu; ?>" alt="<?php echo $producto->detalle; ?>">
@@ -50,7 +50,7 @@ $productos = json_decode($data)->datos;
                                 <p class="text-num-pr">0</p>
                                 <button class="btn-contador-add" onclick="addContadorProducts(this)">+</button>
                             </div>
-                            <button class="btn-card-cart" data-id-menu=<?php echo $producto->id_menu; ?>""><i class="bi bi-cart-plus-fill"></i> Agregar</button>
+                            <button class="btn-card-cart btn-add-cart" data-id-menu="<?php echo $producto->id_menu; ?>"><i class="bi bi-cart-plus-fill"></i> Agregar</button>
                         </div>
                     </div>
                 </div>
