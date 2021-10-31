@@ -47,7 +47,7 @@ $productos = json_decode($data)->datos;
                         <div class="contenedor-btn-count">
                             <div class="contenedor-num-pr">
                                 <button class="btn-contador-rest" onclick="subtractContadorProducts(this)">-</button>
-                                <p class="text-num-pr">0</p>
+                                <p class="text-num-pr">1</p>
                                 <button class="btn-contador-add" onclick="addContadorProducts(this)">+</button>
                             </div>
                             <button class="btn-card-cart btn-add-cart" data-id-menu="<?php echo $producto->id_menu; ?>"><i class="bi bi-cart-plus-fill"></i> Agregar</button>
