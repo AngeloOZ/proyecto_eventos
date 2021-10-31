@@ -1,55 +1,166 @@
-<?php
-$URL_BASE = "http://localhost/VC7/MovilTailerCliente/";
-///$URL_BASE = "http://localhost/proyecto_eventos/";
-$data = file_get_contents('https://roman-company.com/TrailerMovilApiRest/view/evento.php?estado=active');
-$eventos = json_decode($data)->datos;
+<!DOCTYPE html>
+<html lang="en">
 
-include_once 'layout/header.php';
-include_once 'layout/navegacion.php';
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="./css/login_styles.css" />
+    <script src="./js/jquery-3.6.0.js"></script>
+   <title>Iniciar Sesión</title>
+</head>
 
-?>
-
-<!-- Paralax  -->
-<section class="contenedor">
-    <div class="paralax">
-        <div class="contenido-paralax">
-            <h1>Pagina de Eventos</h1>
-            <p>Ven y disfruta de los mejores eventos </p>
-        </div>
-    </div>
-</section>
-<!-- Contenedor card -->
-<div class="container-fluid py-5 bg-dark">
-    <div class="container">
-        <div class="row g-5 d-flex justify-content-center justify-content-md-evenly" id="container-cards">
-            <?php foreach ($eventos as $evento) : 
-                    $fecha = explode(" ",$evento->fecha_evento)[1];
-                    $id_evento = base64_encode($evento->id_evento);
-                ?>
-                <!-- card -->
-                <div class="col-12 col-sm-6 col-md-5 col-lg-4">
-                    <div class="card m-auto border-0">
-                        <div class="image-wrapper-card">
-                            <img src="<?php echo $evento->foto; ?>" alt="<?php echo $evento->nombre; ?>">
-                        </div>
-                        <div class="card-body text-center">
-                            <h3 class="card-title"><?php echo $evento->nombre; ?></h3>
-                            <p class="event-price-card"><i class="bi bi-currency-dollar"></i><strong><?php echo $evento->precio; ?></strong></p=>
-                            <p><i class="bi bi-calendar-date"></i> <strong><?php echo $fecha; ?></strong></p>
-                            <p><i class="bi bi-geo-alt-fill"></i> <strong><?php echo $evento->ubicacion; ?></strong></p>
-                            <a href="<?php echo "./detalleEventos.php?id=".$id_evento; ?>" class="btn btn-card">Ver más</a>
-                        </div>
-                    </div>
+<body>
+   <div class="container">
+      <div class="forms-container">
+         <div class="signin-signup">
+            <form action="#" class="sign-in-form">
+               <h2 class="title">Iniciar Sesión </h2>
+               <div class="input-field">
+                  <i class="fas fa-envelope"></i>
+                  <input type="email" id="email_login" autocomplete="off" required placeholder="Email" />
+               </div>
+               <div class="input-field">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" id="pass_login"  autocomplete="off" required placeholder="Contraseña" />
+               </div>
+               <input type="submit" value="Login" class="btn solid" id="btn_login" />
+            </form>
+            <form action="#" class="sign-up-form">
+               <h2 class="title">Registrate</h2>
+               <div class="input-field">
+                  <i class="fas fa-user"></i>
+                  <input type="text" autocomplete="off" placeholder="Nombres" />
+               </div>
+               <div class="input-field">
+                  <i class="fas fa-envelope"></i>
+                  <input type="email" autocomplete="off" placeholder="Email" />
+               </div>
+               <div class="input-field">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" autocomplete="off"  placeholder="Contraseña" />
+               </div>
+                <div class="input-field">
+                    <i class="fas fa-phone-alt"></i>
+                    <input type="tel" autocomplete="off"  placeholder="Telefono" />
                 </div>
-                <!-- card /> -->
-            <?php endforeach; ?>
-        </div>
-    </div>
-</div>
-<div class="container-button-fixed">
-    <button class="btn-float" id="btn-top"><i class="bi bi-caret-up-fill"></i></button>
-</div>
-<!-- Contenedor card />-->
-<?php
-include_once 'layout/footer.php';
-?>
+               <input type="submit" class="btn" value="Registrarse" />
+            </form>
+         </div>
+      </div>
+
+      <div class="panels-container">
+         <div class="panel left-panel">
+            <div class="content">
+               <h3>Eres nuevo?</h3>
+               <p>
+                  Registrate en nuestra página para obtener más información acerca de los eventos que te podemos ofrecer
+               </p>
+               <button class="btn transparent" id="sign-up-btn">
+                  Registrarse
+               </button>
+            </div>
+            <!-- <img src="img/log.svg" class="image" alt="" /> -->
+         </div>
+         <div class="panel right-panel">
+            <div class="content">
+               <h3>Ya tienes cuenta?</h3>
+               <p>
+               Inicia sesión en nuestra página para obtener más información acerca de los eventos que te podemos ofrecer
+               </p>
+               <button class="btn transparent" id="sign-in-btn">
+                  Sign in
+               </button>
+            </div>
+            <!-- <img src="img/register.svg" class="image" alt="" /> -->
+         </div>
+      </div>
+   </div>
+
+   <script>
+      const sign_in_btn = document.querySelector("#sign-in-btn");
+      const sign_up_btn = document.querySelector("#sign-up-btn");
+      const container = document.querySelector(".container");
+      const  btn_login = document.getElementById("btn_login")
+
+      btn_login.addEventListener("click",function (e)
+      {
+          login()
+      })
+
+      sign_up_btn.addEventListener("click", () => {
+         container.classList.add("sign-up-mode");
+      });
+
+      sign_in_btn.addEventListener("click", () => {
+         container.classList.remove("sign-up-mode");
+      });
+
+      function login()
+      {
+          let url = "https://roman-company.com/TrailerMovilApiRest/view/login.php";
+          var data = {
+              codigo:"cliente",
+              email:document.getElementById("email_login").value,
+              pass:document.getElementById("pass_login").value
+          }
+
+          //invocamos a la api
+          fetch(url, {
+              method: "POST",
+              body: JSON.stringify(data),
+              headers: {
+                  'Content-Type': 'application/json'
+              }
+          })
+              .then(res => res.json())
+              .then(response => {
+                  if (response.status == 200)
+                  {
+                      console.log(response.datos)
+                      insertSessionPHP(response.datos);
+                  }
+                  else{
+                      alert("Credenciales no validas")
+                      // no se pudo realizar
+                  }
+              })
+              .catch(error => console.error('Error:', error));
+      }
+
+
+      function insertSessionPHP(obj)
+      {
+          let url = "./rest/session.php";
+
+          $.ajax({
+              url:url,
+              method:"POST",
+              data:JSON.stringify(obj)
+          }).done(function (datos){
+              var stringtify = JSON.stringify(datos)
+              var json = JSON.parse(stringtify)
+              if (json.status == 200)
+              {
+                  location.href = "./home.php"
+              }else{
+                  alert("ERROR SESSION")
+              }
+          }).fail(function (error){
+              console.log(error)
+              alert(error)
+          })
+
+      }
+
+
+   </script>
+<style>
+    .input-field input{
+        color: whitesmoke;
+    }
+</style>
+
+</body>
+
+</html>
