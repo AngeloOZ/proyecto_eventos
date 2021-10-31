@@ -26,7 +26,7 @@ $estado = $products['estado'];
     <div class="detalle-evento">
         <div class="container px-4 px-lg-5 ">
             <div class="row gx-4 gx-lg-5 align-items-center">
-                <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src= "<?php echo $foto?>"  alt="..." /></div>
+                <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src= "<?php echo $foto?>"  alt="<?php echo $nombre; ?>" /></div>
                 <div class="col-md-6">
 
 
@@ -51,7 +51,7 @@ $estado = $products['estado'];
                         <div col>
                             <
                         </div>
-                        <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                        <input class="form-control text-center me-3" id="inputQuantity" type="number" value="1" style="max-width: 3rem" />
                         <div col>
                             >
                         </div>
@@ -211,8 +211,7 @@ $estado = $products['estado'];
 </section>
 <!--  -->
 <div class="container-button-fixed">
-    <!-- <button class="btn-float" id="btn-cart"><i class="bi bi-cart-fill"></i></button> -->
-    <button class="btn-float" id="btn-top"><i class="bi bi-caret-up-fill"></i></button>
+    <button class="btn-float btn-purple" id="btn-top"><i class="bi bi-caret-up-fill"></i></button>
 </div>
 <?php
 include_once 'layout/footer.php';

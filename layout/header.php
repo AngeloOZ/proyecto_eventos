@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="./css/loader.css">
     <link rel="stylesheet" href="./css/styles.css">
 
+    <!-- SweetAlert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Google Fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

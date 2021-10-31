@@ -50,7 +50,7 @@ $productos = json_decode($data)->datos;
                                 <p class="text-num-pr">1</p>
                                 <button class="btn-contador-add" onclick="addContadorProducts(this)">+</button>
                             </div>
-                            <button class="btn-card-cart btn-add-cart" data-id-menu="<?php echo $producto->id_menu; ?>"><i class="bi bi-cart-plus-fill"></i> Agregar</button>
+                            <button class="btn-card-cart btn-purple btn-add-cart" data-id-menu="<?php echo $producto->id_menu; ?>"><i class="bi bi-cart-plus-fill"></i> Agregar</button>
                         </div>
                     </div>
                 </div>
@@ -60,8 +60,8 @@ $productos = json_decode($data)->datos;
     </div>
 </section>
 <div class="container-button-fixed two-button">
-    <button class="btn-float" id="btn-cart" data-pushbar-target="right"><i class="bi bi-cart-fill"></i></button>
-    <button class="btn-float" id="btn-top"><i class="bi bi-caret-up-fill"></i></button>
+    <button class="btn-float btn-purple" id="btn-cart" data-pushbar-target="right"><i class="bi bi-cart-fill"></i></button>
+    <button class="btn-float btn-purple" id="btn-top"><i class="bi bi-caret-up-fill"></i></button>
 </div>
 <!-- pushbar -->
 <aside data-pushbar-id="right" data-pushbar-direction="right" style="width:400px">

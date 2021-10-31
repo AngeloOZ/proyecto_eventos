@@ -11,6 +11,23 @@ html {
     scroll-behavior: smooth;
 }
 
+.btn-purple{
+    background-color: var(--morado);
+    border-color: var(--morado);
+    color: #fff;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+}
+.btn-purple:hover{
+    background-color: var(--morado-dark);
+    border-color: var(--morado-dark);
+    color: #fff;
+}
+.btn-purple:focus{
+    box-shadow:0 0 0 3px rgba(121, 82, 179, 0.251)
+}
+
 /* -------------------------------------------------------------------------- */
 /*                            Estilos para paralax                            */
 /* -------------------------------------------------------------------------- */
@@ -122,9 +139,7 @@ p.event-price-card {
 }
 
 .btn-card {
-    background-color: var(--morado);
     margin-top: 10px;
-    color: #fff;
     font-family: var(--ft-poppins);
     font-weight: 400;
 }
@@ -150,20 +165,11 @@ nav {
     flex: 1;
     border: none;
     cursor: pointer;
-    color: #fff;
     font-size: 22px;
-    background-color: var(--morado);
-    border: var(--morado);
 }
 
 .btn-float#btn-cart:first-child {
     border-right: 2px solid #000;
-}
-
-.btn-float:hover {
-    color: #fff;
-    background-color: var(--morado-dark);
-    border-color: var(--morado-dark);
 }
 
 footer#footer {
@@ -285,10 +291,8 @@ p.price-pr-card span {
 }
 
 .btn-card-cart {
-    background-color: var(--morado);
     height: 35px;
     border: none;
-    color: #fff;
     font-family: var(--ft-poppins);
     font-weight: 400;
     width: 110px;
@@ -305,11 +309,6 @@ p.price-pr-card span {
     display: block;
     background-color: transparent;
     z-index: 10;
-}
-
-.btn-card-cart:hover {
-    color: #fff;
-
 }
 
 .contenedor-btn-count {
@@ -369,4 +368,83 @@ p.price-pr-card span {
 
 .btn_reserva_eve:hover {
     background-color: var(--morado-dark);
+}
+/* -------------------------------------------------------------------------- */
+/*                             Estilos de carrito                             */
+/* -------------------------------------------------------------------------- */
+.contenedor-preorden{
+    width: 350px !important;
+}
+.sub-contenedor-preoden{
+    display: flex;
+    flex-direction: column;
+    background-color: #191c1f;
+    width: 100%;
+    height: 100%;
+}
+.contenedor-header-cart{
+    width: 100%;
+    background-color: var(--morado);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+.contenedor-header-cart .title-header-cart{
+    font-size: 22px;
+    font-family: var(--ft-poppins);
+    padding: 0;
+    margin: 0;
+}
+.contenedor-header-cart .push_right{
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.contenedor-items-carro{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.contenedor-items-carro .item-carro{
+    color: #fff;
+    background-color: royalblue;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.image-item{
+    width: 60px;
+    height: 60px;
+}
+.image-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.delete-item{
+    display: block;
+    flex-basis: 100%;
+    color: #fff;
+    font-weight: 500;
+}
+
+
+.contenedor-total-items{
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    border-top: 3px double var(--morado);
+}
+.contenedor-total-items .total-estimado{
+    color: #fff;
+    font-family: var(--ft-poppins);
+
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
