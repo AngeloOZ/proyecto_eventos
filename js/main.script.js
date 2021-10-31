@@ -114,6 +114,7 @@ function addProductCart(){
     if(!productContainer) return;
    
     productContainer.addEventListener("click", e =>{
+ 
         if(e.target.classList.contains('btn-add-cart')){
             const containerCount = e.target.previousElementSibling;
             const idMenu = Number.parseInt(e.target.dataset.idMenu);
@@ -125,6 +126,41 @@ function addProductCart(){
                 "menu": idMenu,
                 "cant": quantityProducts,
             }
+           sendRequestAddCart(data);
         }
     })
 }
+
+function sendRequestAddCart(data){
+    let url = "https://roman-company.com/TrailerMovilApiRest/view/cliente_menu_tem.php";
+    //invocamos a la api
+    fetch(url, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(res => res.json())
+    .then(response => {
+        if (response.status == 200){
+            getTemporalCar();
+            alert("guardado")
+            // poner alrta de se a ha agregado corretcamente 
+        }
+        else{
+            alert("hey no se guardo ")
+            // no se pudo realizar 
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}   
+
+function getTemporalCar(){
+    let url = "https://roman-company.com/TrailerMovilApiRest/view/cliente_menu_item.php?email=guaman1579@gmail.com";
+    fetch(url)
+    .then(response => response.json())
+     .then(data => console.log(data))
+     .catch(console.log);
+}
+
