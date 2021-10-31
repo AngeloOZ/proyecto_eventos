@@ -1,5 +1,6 @@
 <?php
-$URL_BASE = "http://localhost/proyecto_eventos/";
+$URL_BASE = "http://localhost/VC7/MovilTailerCliente/";
+///$URL_BASE = "http://localhost/proyecto_eventos/";
 $data = file_get_contents('https://roman-company.com/TrailerMovilApiRest/view/evento.php?estado=active');
 $eventos = json_decode($data)->datos;
 
@@ -36,7 +37,7 @@ include_once 'layout/navegacion.php';
                             <p class="event-price-card"><i class="bi bi-currency-dollar"></i><strong><?php echo $evento->precio; ?></strong></p=>
                             <p><i class="bi bi-calendar-date"></i> <strong><?php echo $fecha; ?></strong></p>
                             <p><i class="bi bi-geo-alt-fill"></i> <strong><?php echo $evento->ubicacion; ?></strong></p>
-                            <a href="<?php echo $URL_BASE."detalleEventos.php?id=".$id_evento; ?>" class="btn btn-card">Ver más</a>
+                            <a href="<?php echo "./detalleEventos.php?id=".$id_evento; ?>" class="btn btn-card">Ver más</a>
                         </div>
                     </div>
                 </div>

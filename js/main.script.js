@@ -110,7 +110,8 @@ function sendRequestAddCart(data){
     })
     .then(res => res.json())
     .then(response => {
-        if (response.status == 200){
+        if (response.status == 200)
+        {
             getTemporalCar();
             alert("guardado")
             // poner alrta de se a ha agregado corretcamente 

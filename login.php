@@ -84,6 +84,40 @@
       sign_in_btn.addEventListener("click", () => {
          container.classList.remove("sign-up-mode");
       });
+
+      function login()
+      {
+          let url = "https://roman-company.com/TrailerMovilApiRest/view/login.php";
+          var data = {
+              codigo:"cliente",
+              email:"marcoamancha@gmail.com",
+              pass:"$2y$10$A3ewf2gt89k6s4bpmp5WTehh8WNm7Q44z4mE5m/6AZ6mV.2KvD7JS"
+          }
+          //invocamos a la api
+          fetch(url, {
+              method: "POST",
+              body: JSON.stringify(data),
+              headers: {
+                  'Content-Type': 'application/json'
+              }
+          })
+              .then(res => res.json())
+              .then(response => {
+                  if (response.status == 200)
+                  {
+                      getTemporalCar();
+                      alert("guardado")
+                      // poner alrta de se a ha agregado corretcamente
+                  }
+                  else{
+                      alert("hey no se guardo ")
+                      // no se pudo realizar
+                  }
+              })
+              .catch(error => console.error('Error:', error));
+      }
+
+
    </script>
 </body>
 
