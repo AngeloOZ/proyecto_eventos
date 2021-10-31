@@ -48,17 +48,20 @@ function OpacityParallax() {
     if(!a || !b) return;
 
     window.addEventListener('scroll', () => {
-        let scroll = document.documentElement.scrollTop + 100
+        let scroll = document.documentElement.scrollTop + 100;
         let hg = a.getBoundingClientRect().height
         if (scroll <= hg) {
             let auxHg = hg - scroll;
             let op = (auxHg / hg)
             b.style.opacity = op;
+          
         }
     });
 }
 
+
 function addContadorProducts(event){
+    let scroll_pos = document.documentElement.scrollTop;
     text = event.previousElementSibling;
     number = Number.parseInt(text.innerText);
     number++;

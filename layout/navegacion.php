@@ -30,7 +30,7 @@
                                 <hr class="dropdown-divider" />
                             </li>
                             <li><a class="dropdown-item" href="perfil.php">Ajustes</a></li>
-                            <li><a class="dropdown-item" href="#!">Cerrar Sesión</a></li>
+                            <li><a class="dropdown-item" href="#!">Iniciar Sesión</a></li>
                         </ul>
                     </li>
                 </ul>
