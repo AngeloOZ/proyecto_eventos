@@ -16,7 +16,6 @@ window.addEventListener('load', (event) => {
         // loader.style.display = 'none';
         loader.remove();
     },600)
-    console.log('100% cargado')
 });
 
 
@@ -25,9 +24,11 @@ window.addEventListener('load', (event) => {
 /*                            Funciones de usuario                            */
 /* -------------------------------------------------------------------------- */
 function initFunctions() {
+    document.cookie = "correo=guaman1579@gmail.com; expires=Thu, 18 Dec 2022 12:00:00 UTC; path=/";
     getEventData();
     OpacityParallax();
     scrollToTop();
+    addProductCart();
 }
 
 async function getEventData() {
@@ -103,8 +104,27 @@ function subtractContadorProducts(event){
     text = event.nextElementSibling;
     number = Number.parseInt(text.innerText);
     number--;
-    if(number < 0){
-        number = 0;
+    if(number <= 1){
+        number = 1;
     }
     text.innerText = number;
+}
+function addProductCart(){
+    const productContainer = document.getElementById("container-productos");
+    if(!productContainer) return;
+   
+    productContainer.addEventListener("click", e =>{
+        if(e.target.classList.contains('btn-add-cart')){
+            const containerCount = e.target.previousElementSibling;
+            const idMenu = Number.parseInt(e.target.dataset.idMenu);
+            const quantityProducts = Number.parseInt(containerCount.querySelector('p.text-num-pr').textContent);
+            const email = document.cookie.split('=')[1];
+            
+            const data = {
+                "email":  email,
+                "menu": idMenu,
+                "cant": quantityProducts,
+            }
+        }
+    })
 }

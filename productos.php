@@ -30,16 +30,16 @@ $productos = json_decode($data)->datos;
     <div class="row">
         <h2 class="col-12 text-center mb-4 text-productos">Sección productos</h2>
     </div>
-    <div class="row g-4 d-flex justify-content-center justify-content-md-evenly" id="container-productos">
+    <div class="row g-4 p-3 d-flex justify-content-center" id="container-productos">
         <?php foreach ($productos as $producto) : ?>
             <!-- card -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="col-12 col-sm-6 col-md-4">
                 <div class="card m-auto border-0">
                     <div class="image-wrapper-card-pr">
                         <img src="<?php echo $producto->foto_menu; ?>" alt="<?php echo $producto->detalle; ?>">
                     </div>
                     <div class="card-body text-center">
-                        <h3 class="card-title-pr">Pilsenar 1 Litro</h3>
+                        <h3 class="card-title-pr"><?php echo $producto->detalle; ?></h3>
                         <div class="row d-flex flex-column-reverse align-items-center">
                             <p class="col price-pr-card"><span>$</span> </i><strong><?php echo $producto->precio; ?></strong></p=>
                             <p class="col category-pr"><strong><?php echo $producto->detalle_tipo; ?></strong> <i class="bi bi-tags-fill"></i></p>
@@ -47,10 +47,10 @@ $productos = json_decode($data)->datos;
                         <div class="contenedor-btn-count">
                             <div class="contenedor-num-pr">
                                 <button class="btn-contador-rest" onclick="subtractContadorProducts(this)">-</button>
-                                <p class="text-num-pr">0</p>
+                                <p class="text-num-pr">1</p>
                                 <button class="btn-contador-add" onclick="addContadorProducts(this)">+</button>
                             </div>
-                            <button class="btn-card-cart" data-id-menu=<?php echo $producto->id_menu; ?>""><i class="bi bi-cart-plus-fill"></i> Agregar</button>
+                            <button class="btn-card-cart btn-add-cart" data-id-menu="<?php echo $producto->id_menu; ?>"><i class="bi bi-cart-plus-fill"></i> Agregar</button>
                         </div>
                     </div>
                 </div>

@@ -293,6 +293,18 @@ p.price-pr-card span {
     font-weight: 400;
     width: 110px;
     border-radius: 10px;
+    position: relative;
+}
+.btn-card-cart::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 35px;
+    display: block;
+    background-color: transparent;
+    z-index: 10;
 }
 
 .btn-card-cart:hover {
