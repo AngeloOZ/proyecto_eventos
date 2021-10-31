@@ -1,6 +1,6 @@
 <?php
   include_once 'global/conexion.php';
-  include_once 'modeloCarrito.php';
+  include_once 'modeloCarrito___.php';
   include_once 'layout/header.php';
   include_once 'layout/navegacion.php';
 ?>
