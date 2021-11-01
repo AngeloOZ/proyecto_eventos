@@ -63,17 +63,7 @@ $productos = json_decode($data)->datos;
     <button class="btn-float btn-purple" id="btn-cart" data-pushbar-target="right"><i class="bi bi-cart-fill"></i></button>
     <button class="btn-float btn-purple" id="btn-top"><i class="bi bi-caret-up-fill"></i></button>
 </div>
-<!-- pushbar -->
-<aside data-pushbar-id="right" data-pushbar-direction="right" style="width:400px">
-    <div class="title"><span data-pushbar-close class="close push_right"></span> Carrito</div>
-</aside>
-
-<script type="text/javascript">
-    const pushbar = new Pushbar({
-        blur: true,
-        overlay: true,
-    });
-</script>
 <?php
+include_once "carritoDeCompras.php";
 include_once 'layout/footer.php';
 ?>

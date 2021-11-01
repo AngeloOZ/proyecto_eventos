@@ -373,12 +373,12 @@ p.price-pr-card span {
 /*                             Estilos de carrito                             */
 /* -------------------------------------------------------------------------- */
 .contenedor-preorden{
-    width: 350px !important;
+    width: 360px !important;
 }
 .sub-contenedor-preoden{
     display: flex;
     flex-direction: column;
-    background-color: #191c1f;
+    /* background-color: #191c1f; */
     width: 100%;
     height: 100%;
 }
@@ -407,31 +407,79 @@ p.price-pr-card span {
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+    padding: 0 10px;
 }
 .contenedor-items-carro .item-carro{
-    color: #fff;
-    background-color: royalblue;
     width: 100%;
-    height: 100px;
+    margin-top: 15px;
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
+    border-bottom: 1px solid #f1f1f2;
+}
+.contenedor-items-carro .item-carro:last-child{
+    border-bottom: none;
 }
 .image-item{
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 90px;
 }
 .image-item img {
     object-fit: cover;
     width: 100%;
     height: 100%;
 }
-.delete-item{
-    display: block;
+.body-item{
+    width: 235px;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.body-item .detail-item{
+    width: 60%;
+    height: 100%;
+    margin: 0;
+    font-size: 15px;
+    font-style: italic;
+    padding-left: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.body-item .quantity-item{
+    width: 30%;
+    margin: 0;
+    text-align: right;
+    font-weight: bold;
+    font-size: 18px;
+}
+.body-item .quantity-item::before{
+    content: 'Cant: ';
+}
+.footer-item{
     flex-basis: 100%;
-    color: #fff;
+    width: 100%;
+    height: 30px;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.delete-item{
     font-weight: 500;
 }
-
+.delete-item:hover{
+    text-decoration: underline;
+}
+.price-item{
+    margin: 0;
+    text-align: right;
+    font-weight: bold;
+    font-size: 18px;
+}
+.price-item::before{
+    content: '$';
+}
 
 .contenedor-total-items{
     text-align: center;
@@ -440,7 +488,7 @@ p.price-pr-card span {
     border-top: 3px double var(--morado);
 }
 .contenedor-total-items .total-estimado{
-    color: #fff;
+    /* color: #fff; */
     font-family: var(--ft-poppins);
 
     width: 100%;
