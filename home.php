@@ -37,7 +37,7 @@ include_once 'layout/navegacion.php';
                             <p class="event-price-card"><i class="bi bi-currency-dollar"></i><strong><?php echo $evento->precio; ?></strong></p=>
                             <p><i class="bi bi-calendar-date"></i> <strong><?php echo $fecha; ?></strong></p>
                             <p><i class="bi bi-geo-alt-fill"></i> <strong><?php echo $evento->ubicacion; ?></strong></p>
-                            <a href="<?php echo "./detalleEventos.php?id=".$id_evento; ?>" class="btn btn-card">Ver más</a>
+                            <a href="<?php echo "./detalleEventos.php?id=".$id_evento; ?>" class="btn btn-card btn-purple">Ver más</a>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ include_once 'layout/navegacion.php';
     </div>
 </div>
 <div class="container-button-fixed">
-    <button class="btn-float" id="btn-top"><i class="bi bi-caret-up-fill"></i></button>
+    <button class="btn-float btn-purple" id="btn-top"><i class="bi bi-caret-up-fill"></i></button>
 </div>
 <!-- Contenedor card />-->
 <?php

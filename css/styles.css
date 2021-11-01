@@ -11,6 +11,23 @@ html {
     scroll-behavior: smooth;
 }
 
+.btn-purple{
+    background-color: var(--morado);
+    border-color: var(--morado);
+    color: #fff;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+}
+.btn-purple:hover{
+    background-color: var(--morado-dark);
+    border-color: var(--morado-dark);
+    color: #fff;
+}
+.btn-purple:focus{
+    box-shadow:0 0 0 3px rgba(121, 82, 179, 0.251)
+}
+
 /* -------------------------------------------------------------------------- */
 /*                            Estilos para paralax                            */
 /* -------------------------------------------------------------------------- */
@@ -122,9 +139,7 @@ p.event-price-card {
 }
 
 .btn-card {
-    background-color: var(--morado);
     margin-top: 10px;
-    color: #fff;
     font-family: var(--ft-poppins);
     font-weight: 400;
 }
@@ -150,20 +165,11 @@ nav {
     flex: 1;
     border: none;
     cursor: pointer;
-    color: #fff;
     font-size: 22px;
-    background-color: var(--morado);
-    border: var(--morado);
 }
 
 .btn-float#btn-cart:first-child {
     border-right: 2px solid #000;
-}
-
-.btn-float:hover {
-    color: #fff;
-    background-color: var(--morado-dark);
-    border-color: var(--morado-dark);
 }
 
 footer#footer {
@@ -285,10 +291,8 @@ p.price-pr-card span {
 }
 
 .btn-card-cart {
-    background-color: var(--morado);
     height: 35px;
     border: none;
-    color: #fff;
     font-family: var(--ft-poppins);
     font-weight: 400;
     width: 110px;
@@ -305,11 +309,6 @@ p.price-pr-card span {
     display: block;
     background-color: transparent;
     z-index: 10;
-}
-
-.btn-card-cart:hover {
-    color: #fff;
-
 }
 
 .contenedor-btn-count {
@@ -369,4 +368,131 @@ p.price-pr-card span {
 
 .btn_reserva_eve:hover {
     background-color: var(--morado-dark);
+}
+/* -------------------------------------------------------------------------- */
+/*                             Estilos de carrito                             */
+/* -------------------------------------------------------------------------- */
+.contenedor-preorden{
+    width: 360px !important;
+}
+.sub-contenedor-preoden{
+    display: flex;
+    flex-direction: column;
+    /* background-color: #191c1f; */
+    width: 100%;
+    height: 100%;
+}
+.contenedor-header-cart{
+    width: 100%;
+    background-color: var(--morado);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+.contenedor-header-cart .title-header-cart{
+    font-size: 22px;
+    font-family: var(--ft-poppins);
+    padding: 0;
+    margin: 0;
+}
+.contenedor-header-cart .push_right{
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.contenedor-items-carro{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0 10px;
+}
+.contenedor-items-carro .item-carro{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #f1f1f2;
+}
+.contenedor-items-carro .item-carro:last-child{
+    border-bottom: none;
+}
+.image-item{
+    width: 80px;
+    height: 90px;
+}
+.image-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.body-item{
+    width: 235px;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.body-item .detail-item{
+    width: 60%;
+    height: 100%;
+    margin: 0;
+    font-size: 15px;
+    font-style: italic;
+    padding-left: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.body-item .quantity-item{
+    width: 30%;
+    margin: 0;
+    text-align: right;
+    font-weight: bold;
+    font-size: 18px;
+}
+.body-item .quantity-item::before{
+    content: 'Cant: ';
+}
+.footer-item{
+    flex-basis: 100%;
+    width: 100%;
+    height: 30px;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.delete-item{
+    font-weight: 500;
+}
+.delete-item:hover{
+    text-decoration: underline;
+}
+.price-item{
+    margin: 0;
+    text-align: right;
+    font-weight: bold;
+    font-size: 18px;
+}
+.price-item::before{
+    content: '$';
+}
+
+.contenedor-total-items{
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    border-top: 3px double var(--morado);
+}
+.contenedor-total-items .total-estimado{
+    /* color: #fff; */
+    font-family: var(--ft-poppins);
+
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
