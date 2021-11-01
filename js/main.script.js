@@ -133,13 +133,3 @@ function getTemporalCar(){
 }
 
 
-function getCredenciales()
-{
-    var obj = {
-        email : "<?php echo $_SESSION['email']?>",
-        names : "<?php echo $_SESSION['name']?>"
-    }
-
-    return obj;
-}
-
