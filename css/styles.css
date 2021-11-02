@@ -237,9 +237,12 @@ p.price-pr-card {
 }
 
 p.category-pr {
-    font-weight: 300;
-    font-size: 16px;
+    width: 50%;
+    background-color: rgb(39, 39, 39);
+    border-radius: 0px 20px 30px 30px;
+    font-size: 15px;
     margin-bottom: 5px;
+    opacity: 0.6;
 }
 
 p.price-pr-card span {
