@@ -22,10 +22,11 @@ include_once 'layout/navegacion.php';
 <div class="container-fluid py-5 bg-dark">
     <div class="container">
         <div class="row g-5 d-flex justify-content-center justify-content-md-evenly" id="container-cards">
-            <?php foreach ($eventos as $evento) : 
-                    $fecha = explode(" ",$evento->fecha_evento)[1];
-                    $id_evento = base64_encode($evento->id_evento);
-                ?>
+            <?php foreach ($eventos as $evento) :
+                $fecha = explode(" ", $evento->fecha_evento)[1];
+                $id_evento = base64_encode($evento->id_evento);
+                $precio = number_format($evento->precio, 2);
+            ?>
                 <!-- card -->
                 <div class="col-12 col-sm-6 col-md-5 col-lg-4">
                     <div class="card m-auto border-0">
@@ -34,10 +35,13 @@ include_once 'layout/navegacion.php';
                         </div>
                         <div class="card-body text-center">
                             <h3 class="card-title"><?php echo $evento->nombre; ?></h3>
-                            <p class="event-price-card"><i class="bi bi-currency-dollar"></i><strong><?php echo $evento->precio; ?></strong></p=>
+                            <p class="event-price-card">
+                                <i class="bi bi-currency-dollar"></i>
+                                <strong><?php echo $precio ?></strong>
+                            </p>
                             <p><i class="bi bi-calendar-date"></i> <strong><?php echo $fecha; ?></strong></p>
                             <p><i class="bi bi-geo-alt-fill"></i> <strong><?php echo $evento->ubicacion; ?></strong></p>
-                            <a href="<?php echo "./detalleEventos.php?id=".$id_evento; ?>" class="btn btn-card btn-purple">Ver más</a>
+                            <a href="<?php echo "./detalleEventos.php?id=" . $id_evento; ?>" class="btn btn-card btn-purple">Ver más</a>
                         </div>
                     </div>
                 </div>
