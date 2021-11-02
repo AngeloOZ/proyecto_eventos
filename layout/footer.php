@@ -48,7 +48,6 @@
             email: "<?php echo $_SESSION["email"] ?>",
             nombre: "<?php echo $_SESSION["name"] ?>",
         }
-
     </script>
     <script src="js/main.script.js"></script>
     <script src="js/paralax.js"></script>

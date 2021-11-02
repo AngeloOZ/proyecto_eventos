@@ -14,15 +14,15 @@
    <div class="container">
       <div class="forms-container">
          <div class="signin-signup">
-            <form action="#" class="sign-in-form">
+            <form action="#" class="sign-in-form" autocomplete>
                <h2 class="title">Iniciar Sesión </h2>
                <div class="input-field">
                   <i class="fas fa-envelope"></i>
-                  <input type="email" id="email_login" autocomplete="off" required placeholder="Email" />
+                  <input type="email" id="email_login" required placeholder="Email" />
                </div>
                <div class="input-field">
                   <i class="fas fa-lock"></i>
-                  <input type="password" id="pass_login"  autocomplete="off" required placeholder="Contraseña" />
+                  <input type="password" id="pass_login" required placeholder="Contraseña" />
                </div>
                <input type="submit" value="Login" class="btn solid" id="btn_login" />
             </form>
@@ -30,19 +30,19 @@
                <h2 class="title">Registrate</h2>
                <div class="input-field">
                   <i class="fas fa-user"></i>
-                  <input type="text" autocomplete="off" placeholder="Nombres" />
+                  <input type="text" placeholder="Nombres" />
                </div>
                <div class="input-field">
                   <i class="fas fa-envelope"></i>
-                  <input type="email" autocomplete="off" placeholder="Email" />
+                  <input type="email" placeholder="Email" />
                </div>
                <div class="input-field">
                   <i class="fas fa-lock"></i>
-                  <input type="password" autocomplete="off"  placeholder="Contraseña" />
+                  <input type="password" placeholder="Contraseña" />
                </div>
                 <div class="input-field">
                     <i class="fas fa-phone-alt"></i>
-                    <input type="tel" autocomplete="off"  placeholder="Telefono" />
+                    <input type="tel" placeholder="Telefono" />
                 </div>
                <input type="submit" class="btn" value="Registrarse" />
             </form>

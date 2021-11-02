@@ -25,10 +25,11 @@ window.addEventListener('load', (event) => {
 /*                            Funciones de usuario                            */
 /* -------------------------------------------------------------------------- */
 function initFunctions() {
-    document.cookie = "correo=guaman1579@gmail.com; expires=Thu, 18 Dec 2022 12:00:00 UTC; path=/";
     OpacityParallax();
     scrollToTop();
     addProductCart();
+    getTemporalCar();
+    deleteItemCart();
 }
 
 function scrollToTop() {
@@ -88,10 +89,9 @@ function addProductCart() {
             const idMenu = Number.parseInt(e.target.dataset.idMenu);
             const labelQuantityProducts = containerCount.querySelector('p.text-num-pr');
             const quantityProducts = Number.parseInt(labelQuantityProducts.textContent);
-            const email = document.cookie.split('=')[1];
             labelQuantityProducts.textContent = 1;
             const data = {
-                "email": email,
+                "email": user_credencials.email,
                 "menu": idMenu,
                 "cant": quantityProducts,
             }
@@ -101,8 +101,8 @@ function addProductCart() {
 }
 
 function sendRequestAddCart(data, btnAddCart) {
-    let url = "https://roman-company.com/TrailerMovilApiRest/view/cliente_menu_tem.php";
-    btnAddCart.setAttribute('disabled',"true");
+    const url = "https://roman-company.com/TrailerMovilApiRest/view/cliente_menu_tem.php";
+    btnAddCart.setAttribute('disabled', "true");
     //invocamos a la api
     fetch(url, {
         method: "POST",
@@ -111,36 +111,103 @@ function sendRequestAddCart(data, btnAddCart) {
             'Content-Type': 'application/json'
         }
     })
-        .then(res => res.json())
-        .then(response => {
-            if (response.status == 200) {
-                sendSweetAlert('success','Producto agregado','El producto se agrego al carrito')
-                getTemporalCar();
-            }
-            else {
-                sendSweetAlert('error',"Oppss","No se pudo guardar el producto en el carrito");
-            }
-        })
-        .catch(error => console.error('Error:', error))
-        .finally(()=>{
-            btnAddCart.removeAttribute('disabled');
-        })
+    .then(res => res.json())
+    .then(response => {
+        if (response.status == 200) {
+            sendSweetAlert('success', 'Producto agregado', 'El producto se agrego al carrito')
+            getTemporalCar();
+        }
+        else {
+            sendSweetAlert('error', "Oppss", "Este producto ya existe en el carrito, si desea editarlo, primero elimine el item del carrito");
+        }
+    })
+    .catch(error => console.error('Error:', error))
+    .finally(() => {
+        btnAddCart.removeAttribute('disabled');
+    })
 }
 
 function getTemporalCar() {
-    let url = "https://roman-company.com/TrailerMovilApiRest/view/cliente_menu_item.php?email=guaman1579@gmail.com";
+    const url = `https://roman-company.com/TrailerMovilApiRest/view/cliente_menu_tem.php?email=${user_credencials.email}`;
     fetch(url)
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(console.log);
+    .then(response => response.json())
+    .then(({ datos }) => {
+        if(datos != null){
+            addItemsCart(datos)
+        }else{
+            addItemsCart([])
+        }
+    })
+    .catch(console.log);
 }
 
-function sendSweetAlert(icon = 'success', title, message){
+function addItemsCart(items) {
+    const $containerItemsCart = document.getElementById('contenedor-items-carro');
+    if (!$containerItemsCart) return; //Se valida que exista el elemento
+    const fragment = document.createDocumentFragment();
+    const $totalCart = document.getElementById('total-items-cart');
+    const $quantityItemsCart = document.getElementById('quantity-items-cart');
+    let quantityItems = 0;
+    let total = 0;
+    $containerItemsCart.innerHTML = '';
+    items.forEach(item => {
+        quantityItems += Number.parseInt(item.cantidad);
+        total += Number.parseFloat(item.total);
+        const divItem = document.createElement('DIV');
+        divItem.classList.add('item-carro');
+        divItem.innerHTML = `
+        <div class="image-item">
+        <img src="${item.foto}" alt="${item.detalle}">
+        </div>
+        <div class="body-item">
+        <p class="detail-item">${item.detalle} - $${Number.parseFloat(item.precio).toFixed(2)} c/u</p>
+        <p class="quantity-item">${item.cantidad}</p>
+        </div>
+        <div class="footer-item">
+        <p class="delete-item" data-id-item-menu="${item.id_menu}">Eliminar</p>
+        <p class="price-item">${Number.parseFloat(item.total).toFixed(2)}</p>
+        </div>
+        `;
+        fragment.appendChild(divItem);
+    });
+    $containerItemsCart.appendChild(fragment);
+    $quantityItemsCart.textContent = `(${quantityItems})`;
+    $totalCart.textContent = total.toFixed(2);
+}
+function deleteItemCart(){
+    const $containerItemsCart = document.getElementById('contenedor-items-carro');
+    if (!$containerItemsCart) return; //Se valida que exista el elemento
+
+    $containerItemsCart.addEventListener('click', async e =>{
+        if(e.target.classList.contains('delete-item')){
+            const idMenu = Number.parseInt(e.target.dataset.idItemMenu);
+            const url = `https://roman-company.com/TrailerMovilApiRest/view/cliente_menu_tem.php`;
+            const data = {
+                "email": user_credencials.email ,
+                "menu": idMenu
+            }
+            try {
+                const request = await fetch(url, {method: "DELETE", body: JSON.stringify(data), headers: {'Content-Type': 'application/json'}})
+                const response = await request.json();
+                
+                if(response.status == 200 && response.datos){
+                    getTemporalCar();
+                    sendSweetAlert('success','Item eliminado','El producto fue removido del carrito de compras');
+                }else{
+                    sendSweetAlert('error','Oppss','Hubo un error al tratar de eliminar el item, intentalo de nuevo');
+                }
+            } catch (error) {
+                console.log(error);
+            }
+
+        }
+    })
+}
+
+function sendSweetAlert(icon = 'success', title, message) {
     Swal.fire({
         icon: icon,
         title: title,
         text: message,
-      })
+    })
 }
-
-console.log(user_credencials);
