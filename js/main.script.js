@@ -143,3 +143,4 @@ function sendSweetAlert(icon = 'success', title, message){
       })
 }
 
+console.log(user_credencials);
