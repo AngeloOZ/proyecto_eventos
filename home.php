@@ -50,6 +50,7 @@ include_once 'layout/navegacion.php';
     <button class="btn-float btn-purple" id="btn-top"><i class="bi bi-caret-up-fill"></i></button>
 </div>
 <!-- Contenedor card />-->
+</script>
 <?php
 include_once 'layout/footer.php';
 ?>

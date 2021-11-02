@@ -50,17 +50,21 @@ function OpacityParallax() {
     if (!a || !b) return;
 
     window.addEventListener('scroll', () => {
-        let scroll = document.documentElement.scrollTop + 100;
+        let scroll = document.documentElement.scrollTop;
         let hg = a.getBoundingClientRect().height
         if (scroll <= hg) {
-            let auxHg = hg - scroll;
-            let op = (auxHg / hg)
-            b.style.opacity = op;
-
+            if(scroll == 0 ){
+                b.style.opacity = '1';
+            }else{
+                let auxHg = hg - (scroll + 380);
+                let op = (auxHg / hg)
+                console.log(scroll, op);
+                b.style.opacity = op;
+                b.style.transform = `translateY(${scroll}px)`;
+            }
         }
     });
 }
-
 
 function addContadorProducts(event) {
     let scroll_pos = document.documentElement.scrollTop;
@@ -69,6 +73,7 @@ function addContadorProducts(event) {
     number++;
     text.innerText = number;
 }
+
 function subtractContadorProducts(event) {
     text = event.nextElementSibling;
     number = Number.parseInt(text.innerText);
@@ -78,6 +83,7 @@ function subtractContadorProducts(event) {
     }
     text.innerText = number;
 }
+
 function addProductCart() {
     const productContainer = document.getElementById("container-productos");
     if (!productContainer) return;
@@ -174,6 +180,7 @@ function addItemsCart(items) {
     $quantityItemsCart.textContent = `(${quantityItems})`;
     $totalCart.textContent = total.toFixed(2);
 }
+
 function deleteItemCart(){
     const $containerItemsCart = document.getElementById('contenedor-items-carro');
     if (!$containerItemsCart) return; //Se valida que exista el elemento

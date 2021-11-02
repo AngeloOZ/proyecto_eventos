@@ -51,7 +51,7 @@ html {
     width: 100%;
     height: 100vh;
     text-align: center;
-
+    overflow: hidden;
 }
 
 .paralax::before {
@@ -64,7 +64,7 @@ html {
     left: 0;
     right: 0;
     z-index: 1;
-    margin-bottom:-56px;;
+    margin-bottom:-65px;;
 }
 
 .paralax .contenido-paralax {
@@ -74,6 +74,7 @@ html {
     height: 100%;
     align-items: center;
     justify-content: center;
+    transition: 0.10s all ease;
 }
 
 img.img-carousel {
