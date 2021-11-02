@@ -1,5 +1,5 @@
 <body class="bg-dark">
-    <div class="loader-main active-loader bg-dark" id="loader">
+    <div class="loader-main active-loader" id="loader">
         <div class="loader">
             <div class="dot"></div>
             <div class="dot"></div>

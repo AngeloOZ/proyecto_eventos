@@ -44,13 +44,15 @@ $productos = json_decode($data)->datos;
                             <p class="col price-pr-card"><span>$</span> </i><strong><?php echo $producto->precio; ?></strong></p=>
                             <p class="col category-pr"><strong><?php echo $producto->detalle_tipo; ?></strong> <i class="bi bi-tags-fill"></i></p>
                         </div>
-                        <div class="contenedor-btn-count">
-                            <div class="contenedor-num-pr">
+                        <div class="contenedor-btn-count container ">
+                            <div class="contenedor-num-pr col-6">
                                 <button class="btn-contador-rest" onclick="subtractContadorProducts(this)">-</button>
                                 <p class="text-num-pr">1</p>
                                 <button class="btn-contador-add" onclick="addContadorProducts(this)">+</button>
                             </div>
-                            <button class="btn-card-cart btn-purple btn-add-cart" data-id-menu="<?php echo $producto->id_menu; ?>"><i class="bi bi-cart-plus-fill"></i> Agregar</button>
+                            <div class="col-5">
+                            <button class="btn-card-cart btn-purple btn-add-cart" data-id-menu="<?php echo $producto->id_menu; ?>"><i class="bi bi-cart-plus-fill"></i> </button>
+                            </div>
                         </div>
                     </div>
                 </div>

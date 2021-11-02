@@ -224,7 +224,7 @@ footer#footer {
 
 .card-title-pr {
     color: #fff;
-    font-family: var(--ft-poppins);
+    font-family: var(--frale);
     font-size: 24px;
     margin-bottom: 10px;
 }
@@ -293,9 +293,9 @@ p.price-pr-card span {
 .btn-card-cart {
     height: 35px;
     border: none;
+    width: 100%;
     font-family: var(--ft-poppins);
     font-weight: 400;
-    width: 110px;
     border-radius: 10px;
     position: relative;
 }
@@ -364,10 +364,39 @@ p.price-pr-card span {
     font-family: var(--frale);
     border: none;
     font-weight: bold;
+    font-size: 20px;
+    margin-left: 2em;
 }
 
-.btn_reserva_eve:hover {
+.btn_reserva_eve:hover, .boton_contador_eventos:hover {
     background-color: var(--morado-dark);
+}
+
+.boton_contador_eventos{  
+     font-size: 25px; 
+    background-color: var(--morado);
+    text-align: center; 
+}
+
+.formulario_cantidad{
+    border-radius: 0px;
+    font-weight: bold;
+}
+
+.text-cont{
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0px;
+    margin: 0;
+}
+
+.mas_eventos h2{
+    color: white;
+    text-align: center;
+    padding: 5vh 0  0vh 0  ;
+    font-family: var(--frale);
 }
 /* -------------------------------------------------------------------------- */
 /*                             Estilos de carrito                             */
@@ -496,3 +525,5 @@ p.price-pr-card span {
     justify-content: space-around;
     align-items: center;
 }
+
+
