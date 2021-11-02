@@ -41,7 +41,7 @@ $productos = json_decode($data)->datos;
                     <div class="card-body text-center">
                         <h3 class="card-title-pr"><?php echo $producto->detalle; ?></h3>
                         <div class="row d-flex flex-column-reverse align-items-center">
-                            <p class="col price-pr-card"><span>$</span> </i><strong><?php echo $producto->precio; ?></strong></p=>
+                            <p class="col price-pr-card"><span>$</span> </i><strong><?php echo number_format($producto->precio, 2); ?></strong></p=>
                             <p class="col category-pr"><strong><?php echo $producto->detalle_tipo; ?></strong> <i class="bi bi-tags-fill"></i></p>
                         </div>
                         <div class="contenedor-btn-count container ">
