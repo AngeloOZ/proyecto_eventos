@@ -22,8 +22,8 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Perfil</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#!">Hola: <?php echo $_SESSION['name']; ?></a></li>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="z-index: 999000;">
+                            <li><span class="dropdown-item" style="cursor: unset;">Hola: <?php echo $_SESSION['name']; ?></span></li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>

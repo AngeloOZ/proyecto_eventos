@@ -58,7 +58,6 @@ function OpacityParallax() {
             }else{
                 let auxHg = hg - (scroll + 380);
                 let op = (auxHg / hg)
-                console.log(scroll, op);
                 b.style.opacity = op;
                 b.style.transform = `translateY(${scroll}px)`;
             }

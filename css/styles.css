@@ -46,10 +46,14 @@ html {
 }
 
 .paralax {
+    position: relative;
     background-image: url(../img/paralax.jpg);
     background-size: cover;
     width: 100%;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     overflow: hidden;
 }
@@ -57,23 +61,15 @@ html {
 .paralax::before {
     content: "";
     position: absolute;
-    background-color: black;
-    opacity: 0.4;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
     z-index: 1;
-    margin-bottom:-65px;;
 }
 
 .paralax .contenido-paralax {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
     transition: 0.10s all ease;
 }
 
@@ -532,5 +528,14 @@ p.price-pr-card span {
     justify-content: space-around;
     align-items: center;
 }
-
-
+/* -------------------------------------------------------------------------- */
+/*                              Estilos de perfil                             */
+/* -------------------------------------------------------------------------- */
+.profile-picture{
+    width: 150px;
+    height: 150px;
+}
+.profile-picture > img{
+    width: 100%;
+    object-fit: cover;
+}
