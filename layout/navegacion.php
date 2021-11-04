@@ -28,7 +28,7 @@
                                 <hr class="dropdown-divider" />
                             </li>
                             <li><a class="dropdown-item" href="./perfil.php">Ajustes</a></li>
-                            <li><a class="dropdown-item" href="#!">Iniciar Sesión</a></li>
+                            <li><a class="dropdown-item" href="cerrar_session.php">Cerrar sesion</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="./home.php">Eventos</a></li>

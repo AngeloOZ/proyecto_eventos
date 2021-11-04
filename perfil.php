@@ -1,33 +1,92 @@
 <?php
-// include_once 'global/conexion.php';
-// include_once 'modeloCarrito___.php';
 include_once 'layout/header.php';
 include_once 'layout/navegacion.php';
 ?>
+<style>
+   .form-label {
+      color: #fff;
+   }
+</style>
 <div class="container">
-  <h1 class="text-center mt-4" style="color: #fff;">Editar perfil</h1>
-  <div class="container d-flex justify-content-center my-3">
-    <div class="profile-picture">
-      <img src="./img/user.png" alt="">
-    </div>
-  </div>
-  <!-- tab -->
-  <div class="d-flex align-items-start" style="background-color: #191C1F;">
-    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      
-    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Información</button>
-
-      <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Cambiar clave</button>
-    </div>
-    <div class="tab-content" id="v-pills-tabContent" style="color: #fff; min-height: 450px;">
-      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis repudiandae dolores commodi et, architecto fuga ipsam incidunt magni consectetur quae minima perferendis repellendus rerum quis.
+   <!-- <h1 class="text-center mt-4" style="color: #fff;">Editar perfil</h1> -->
+   <div class="container mt-4 d-flex justify-content-center my-3">
+      <div class="profile-picture">
+         <img src="./img/user.png" alt="">
       </div>
-      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quod distinctio obcaecati cum? Suscipit officia earum similique aliquid voluptatibus repellat labore accusantium saepe culpa nihil soluta inventore dolorum, doloremque consectetur!
+   </div>
+   <!-- tab -->
+   <ul class="nav nav-pills mb-4" id="pills-tab" role="tablist">
+      <li class="nav-item aux-nav-item" role="presentation">
+         <button class="nav-link aux-nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Información</button>
+      </li>
+      <li class="nav-item aux-nav-item" role="presentation">
+         <button class="nav-link aux-nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Cambiar contraseña</button>
+      </li>
+   </ul>
+   <div class="tab-content aux-tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+         <form class="row g-4 p-4" autocomplete="off">
+            <div class="col-md-6">
+               <label for="inputNombre" class="form-label">Nombres</label>
+               <input type="text" class="form-control" id="inputNombre" placeholder="Jhon">
+            </div>
+            <div class="col-md-6">
+               <label for="inputApellido" class="form-label">Apellidos</label>
+               <input type="text" class="form-control" id="inputApellido" placeholder="Doe">
+            </div>
+            <div class="col-md-6">
+               <label for="inputUsuario" class="form-label">Usuario</label>
+               <input type="text" readonly placeholder="User1" class="form-control" id="inputUsuario">
+            </div>
+            <div class="col-md-6">
+               <label for="inputEmail4" class="form-label">Email</label>
+               <input type="email" readonly class="form-control" id="inputEmail4" value="<?php echo $_SESSION['email']; ?>">
+            </div>
+            <div class="col-12">
+               <label for="inputUrlAvatar" class="form-label">Foto de perfil</label>
+               <input type="url" class="form-control" placeholder="http://www.dominio.com/mi-foto-perfil.jpg" id="inputUrlAvatar">
+            </div>
+            <div class="col-md-6">
+               <label for="inputTelefono" class="form-label">Teléfono</label>
+               <input type="tel" class="form-control" id="inputTelefono" placeholder="0987654321">
+            </div>
+            <div class="col-md-6">
+               <label for="inputCiudad" class="form-label">Ciudad</label>
+               <input type="text" class="form-control" id="inputCiudad" placeholder="Riobamba">
+            </div>
+            <div class="col-12 text-center" id="button-save-profile">
+               <button type="submit" class="btn btn-purple">Guardar cambios</button>
+            </div>
+         </form>
       </div>
-    </div>
-  </div>
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+         <form class="row row-col-1 g-4 p-4">
+            <div class="col-md-7">
+               <label for="inputActPwd" class="form-label">Contraseña actual</label>
+               <input type="password" class="form-control" id="inputActPwd">
+            </div>
+            <div class="col-md-5"></div>
+            <div class="col-md-7">
+               <label for="inputNewPwd" class="form-label">Nueva contraseña</label>
+               <input type="password" id="inputNewPwd" class="form-control" aria-describedby="passwordHelpBlock">
+               <div id="passwordHelpBlock" class="form-text">
+                  Tu contraseña debe tener entre 8 y 20 caracteres, contener letras y números, y no debe contener espacios, caracteres especiales ni emoji.
+               </div>
+            </div>
+            <div class="col-md-5"></div>
+            <div class="col-md-7">
+               <label for="inputConfirmPwd" class="form-label">Confirmar contraseña</label>
+               <input type="password" id="inputConfirmPwd" class="form-control" aria-describedby="passwordHelpBlock">
+               <div id="passwordHelpBlock" class="form-text">
+                  Tu contraseña debe tener entre 8 y 20 caracteres, contener letras y números, y no debe contener espacios, caracteres especiales ni emoji.
+               </div>
+            </div>
+            <div class="col-12 text-center">
+               <button type="submit" id="btn-update-pwd" class="btn btn-purple">Cambiar contraseña</button>
+            </div>
+         </form>
+      </div>
+   </div>
 </div>
 
 <?php

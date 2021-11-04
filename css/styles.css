@@ -532,10 +532,29 @@ p.price-pr-card span {
 /*                              Estilos de perfil                             */
 /* -------------------------------------------------------------------------- */
 .profile-picture{
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
 }
 .profile-picture > img{
     width: 100%;
     object-fit: cover;
 }
+.aux-tab-content{
+    background-color: #191C1F;
+    min-height: 390px;
+ }
+ .aux-nav-item {
+    background-color: var(--morado) !important;
+ }
+ .aux-nav-link {
+    background-color: var(--morado) !important;
+    border-color: var(--morado) !important;
+    color: #fff !important;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+ }
+
+ .aux-nav-link.active {
+    background-color: var(--morado-dark) !important;
+ }
