@@ -7,7 +7,7 @@ include_once 'layout/navegacion.php';
       color: #fff;
    }
 </style>
-<div class="container">
+<div class="container editar_perfil" >
    <!-- <h1 class="text-center mt-4" style="color: #fff;">Editar perfil</h1> -->
    <div class="container mt-4 d-flex justify-content-center my-3">
       <div class="profile-picture">
@@ -26,11 +26,11 @@ include_once 'layout/navegacion.php';
    <div class="tab-content aux-tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
          <form class="row g-4 p-4" autocomplete="off">
-            <div class="col-md-6">
+            <div class="col-md-5">
                <label for="inputNombre" class="form-label">Nombres</label>
                <input type="text" class="form-control" id="inputNombre" placeholder="Jhon">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-5">
                <label for="inputApellido" class="form-label">Apellidos</label>
                <input type="text" class="form-control" id="inputApellido" placeholder="Doe">
             </div>
@@ -61,12 +61,12 @@ include_once 'layout/navegacion.php';
       </div>
       <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
          <form class="row row-col-1 g-4 p-4">
-            <div class="col-md-7">
+            <div class="col-md-6">
                <label for="inputActPwd" class="form-label">Contraseña actual</label>
                <input type="password" class="form-control" id="inputActPwd">
             </div>
             <div class="col-md-5"></div>
-            <div class="col-md-7">
+            <div class="col-md-6">
                <label for="inputNewPwd" class="form-label">Nueva contraseña</label>
                <input type="password" id="inputNewPwd" class="form-control" aria-describedby="passwordHelpBlock">
                <div id="passwordHelpBlock" class="form-text">
@@ -74,7 +74,7 @@ include_once 'layout/navegacion.php';
                </div>
             </div>
             <div class="col-md-5"></div>
-            <div class="col-md-7">
+            <div class="col-md-6">
                <label for="inputConfirmPwd" class="form-label">Confirmar contraseña</label>
                <input type="password" id="inputConfirmPwd" class="form-control" aria-describedby="passwordHelpBlock">
                <div id="passwordHelpBlock" class="form-text">

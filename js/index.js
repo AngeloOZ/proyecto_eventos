@@ -25,7 +25,7 @@ function clientRegister(data){
           
           Toast.fire({
             icon: 'success',
-            title: 'Signed in successfully'
+            title: 'Registrado con Éxito'
           }) 
     });
 }

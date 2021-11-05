@@ -545,6 +545,7 @@ p.price-pr-card span {
  }
  .aux-nav-item {
     background-color: var(--morado) !important;
+    font-family: var(--frale);
  }
  .aux-nav-link {
     background-color: var(--morado) !important;
@@ -555,6 +556,10 @@ p.price-pr-card span {
     transition-timing-function: ease-in-out;
  }
 
+ .form-label{
+    font-family: var(--frale);
+ }
  .aux-nav-link.active {
     background-color: var(--morado-dark) !important;
  }
+
