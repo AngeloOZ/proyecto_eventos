@@ -90,7 +90,7 @@ function addProductCart() {
     productContainer.addEventListener("click", e => {
 
         if (e.target.classList.contains('btn-add-cart')) {
-            const containerCount = e.target.previousElementSibling;
+            const containerCount = e.target.parentElement.previousElementSibling;
             const idMenu = Number.parseInt(e.target.dataset.idMenu);
             const labelQuantityProducts = containerCount.querySelector('p.text-num-pr');
             const quantityProducts = Number.parseInt(labelQuantityProducts.textContent);

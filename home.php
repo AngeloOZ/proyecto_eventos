@@ -1,6 +1,4 @@
 <?php
-$URL_BASE = "http://localhost/VC7/MovilTailerCliente/";
-///$URL_BASE = "http://localhost/proyecto_eventos/";
 $data = file_get_contents('https://roman-company.com/TrailerMovilApiRest/view/evento.php?estado=active');
 $eventos = json_decode($data)->datos;
 
