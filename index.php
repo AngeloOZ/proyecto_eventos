@@ -26,25 +26,25 @@
                </div>
                <input type="submit" value="Login" class="btn solid" id="btn_login" />
             </form>
-            <form action="#" class="sign-up-form">
+            <form action="#" class="sign-up-form" id="r_formulario">
                <h2 class="title">Registrate</h2>
                <div class="input-field">
                   <i class="fas fa-user"></i>
-                  <input type="text" placeholder="Nombres" />
+                  <input id="r_name" type="text" placeholder="Nombres" required />
                </div>
                <div class="input-field">
                   <i class="fas fa-envelope"></i>
-                  <input type="email" placeholder="Email" />
+                  <input id="r_email" type="email" placeholder="Email" required />
                </div>
                <div class="input-field">
                   <i class="fas fa-lock"></i>
-                  <input type="password" placeholder="Contraseña" />
+                  <input id="r_password" type="password" placeholder="Contraseña" required  />
                </div>
                 <div class="input-field">
                     <i class="fas fa-phone-alt"></i>
-                    <input type="tel" placeholder="Telefono" />
+                    <input id="r_tel" type="tel" placeholder="Telefono" required />
                 </div>
-               <input type="submit" class="btn" value="Registrarse" />
+               <input type="submit"  class="btn" value="Registrarse" />
             </form>
          </div>
       </div>
@@ -153,6 +153,8 @@
 
       }
    </script>
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="./js/index.js"></script>
 <style>
     .input-field input{
         color: whitesmoke;
