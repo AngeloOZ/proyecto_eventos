@@ -51,7 +51,7 @@ $productos = json_decode($data)->datos;
                                 <button class="btn-contador-add" onclick="addContadorProducts(this)">+</button>
                             </div>
                             <div class="col-5">
-                            <button class="btn-card-cart btn-purple btn-add-cart" data-id-menu="<?php echo $producto->id_menu; ?>"><i class="bi bi-cart-plus-fill"></i> </button>
+                                <button class="btn-card-cart btn-purple btn-add-cart" data-id-menu="<?php echo $producto->id_menu; ?>"><i class="bi bi-cart-plus-fill"></i> </button>
                             </div>
                         </div>
                     </div>
