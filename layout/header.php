@@ -1,7 +1,13 @@
 <?php
-session_start()
+    session_start();    
+    if(isset($_SESSION["session"])){
+        if($_SESSION["session"] != "active"){
+            header("location: index.php");
+        }
+    }else{
+        header("location: index.php");
+    }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 

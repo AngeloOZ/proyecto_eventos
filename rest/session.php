@@ -15,6 +15,8 @@ if ($reque == 'POST')
         session_start();
         $_SESSION['email'] = $json['email'];
         $_SESSION['name'] = $json['nombres'];
+        $_SESSION["session"] = "active";
+
         $array = array("status"=>200);
         echo json_encode(array_map('utf8_encode',$array));
     }catch (Exception $e)

@@ -1,5 +1,13 @@
+<?php
+    session_start();    
+    if(isset($_SESSION["session"])){
+        if($_SESSION["session"] == "active"){
+            header("location: home.php");
+        }
+    }
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
    <meta charset="UTF-8" />
