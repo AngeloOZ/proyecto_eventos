@@ -7,11 +7,33 @@ include_once 'layout/navegacion.php';
       color: #fff;
    }
 </style>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+   <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalToggleLabel">Cargar foto</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+            <div class="mb-3">
+               <input class="form-control" id="formFileImage" type="file" accept="image/*">
+            </div>
+            <div class="preview-photo" id="preview-photo"></div>
+         </div>
+         <div class="modal-footer">
+            <button class="btn btn-purple" id="button-upload-photo" data-bs-dismiss="modal">Actualizar foto</button>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- modal /> -->
 <div class="container">
    <!-- <h1 class="text-center mt-4" style="color: #fff;">Editar perfil</h1> -->
    <div class="container mt-4 d-flex justify-content-center my-3">
       <div class="profile-picture">
          <img src="./img/user.png" alt="">
+         <p class="upload_file" data-bs-toggle="modal" href="#exampleModalToggle"><i class="bi bi-camera-fill"></i></p>
       </div>
    </div>
    <!-- tab -->
