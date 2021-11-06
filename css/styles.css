@@ -11,7 +11,7 @@ html {
     scroll-behavior: smooth;
 }
 
-.btn-purple{
+.btn-purple {
     background-color: var(--morado);
     border-color: var(--morado);
     color: #fff;
@@ -19,13 +19,29 @@ html {
     transition-duration: 0.15s;
     transition-timing-function: ease-in-out;
 }
-.btn-purple:hover{
+
+.btn-purple:hover {
     background-color: var(--morado-dark);
     border-color: var(--morado-dark);
     color: #fff;
 }
-.btn-purple:focus{
-    box-shadow:0 0 0 3px rgba(121, 82, 179, 0.251)
+
+.btn-purple:focus {
+    box-shadow: 0 0 0 3px rgba(121, 82, 179, 0.251)
+}
+
+.aux-dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 5px 10px;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -78,7 +94,8 @@ img.img-carousel {
     object-fit: cover;
     image-rendering: auto;
 }
-.bg-btn-carousel:hover{
+
+.bg-btn-carousel:hover {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -197,9 +214,10 @@ footer#footer {
 /* -------------------------------------------------------------------------- */
 /*                           Estilos card productos                           */
 /* -------------------------------------------------------------------------- */
-.text-productos{
+.text-productos {
     color: #fff;
 }
+
 .image-wrapper-card-pr {
     margin: 6px;
     position: relative;
@@ -299,7 +317,8 @@ p.price-pr-card span {
     border-radius: 10px;
     position: relative;
 }
-.btn-card-cart::before{
+
+.btn-card-cart::before {
     content: '';
     position: absolute;
     top: 0;
@@ -368,22 +387,23 @@ p.price-pr-card span {
     margin-left: 2em;
 }
 
-.btn_reserva_eve:hover, .boton_contador_eventos:hover {
+.btn_reserva_eve:hover,
+.boton_contador_eventos:hover {
     background-color: var(--morado-dark);
 }
 
-.boton_contador_eventos{  
-     font-size: 25px; 
+.boton_contador_eventos {
+    font-size: 25px;
     background-color: var(--morado);
-    text-align: center; 
+    text-align: center;
 }
 
-.formulario_cantidad{
+.formulario_cantidad {
     border-radius: 0px;
     font-weight: bold;
 }
 
-.text-cont{
+.text-cont {
     background-color: white;
     color: black;
     font-weight: bold;
@@ -392,26 +412,29 @@ p.price-pr-card span {
     margin: 0;
 }
 
-.mas_eventos h2{
+.mas_eventos h2 {
     color: white;
     text-align: center;
-    padding: 5vh 0  0vh 0  ;
+    padding: 5vh 0 0vh 0;
     font-family: var(--frale);
 }
+
 /* -------------------------------------------------------------------------- */
 /*                             Estilos de carrito                             */
 /* -------------------------------------------------------------------------- */
-.contenedor-preorden{
+.contenedor-preorden {
     width: 360px !important;
 }
-.sub-contenedor-preoden{
+
+.sub-contenedor-preoden {
     display: flex;
     flex-direction: column;
     /* background-color: #191c1f; */
     width: 100%;
     height: 100%;
 }
-.contenedor-header-cart{
+
+.contenedor-header-cart {
     width: 100%;
     background-color: var(--morado);
     color: #fff;
@@ -420,25 +443,28 @@ p.price-pr-card span {
     align-items: center;
     padding: 10px 20px;
 }
-.contenedor-header-cart .title-header-cart{
+
+.contenedor-header-cart .title-header-cart {
     font-size: 22px;
     font-family: var(--ft-poppins);
     padding: 0;
     margin: 0;
 }
-.contenedor-header-cart .push_right{
+
+.contenedor-header-cart .push_right {
     cursor: pointer;
     font-size: 25px;
 }
 
-.contenedor-items-carro{
+.contenedor-items-carro {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
     padding: 0 10px;
 }
-.contenedor-items-carro .item-carro{
+
+.contenedor-items-carro .item-carro {
     width: 100%;
     margin-top: 15px;
     display: flex;
@@ -446,26 +472,31 @@ p.price-pr-card span {
     flex-wrap: wrap;
     border-bottom: 1px solid #f1f1f2;
 }
-.contenedor-items-carro .item-carro:last-child{
+
+.contenedor-items-carro .item-carro:last-child {
     border-bottom: none;
 }
-.image-item{
+
+.image-item {
     width: 80px;
     height: 90px;
 }
+
 .image-item img {
     object-fit: cover;
     width: 100%;
     height: 100%;
 }
-.body-item{
+
+.body-item {
     width: 235px;
     height: 90px;
     display: flex;
     justify-content: space-between;
     overflow: hidden;
 }
-.body-item .detail-item{
+
+.body-item .detail-item {
     width: 60%;
     height: 100%;
     margin: 0;
@@ -475,17 +506,20 @@ p.price-pr-card span {
     text-overflow: ellipsis;
     overflow: hidden;
 }
-.body-item .quantity-item{
+
+.body-item .quantity-item {
     width: 30%;
     margin: 0;
     text-align: right;
     font-weight: bold;
     font-size: 18px;
 }
-.body-item .quantity-item::before{
+
+.body-item .quantity-item::before {
     content: 'Cant: ';
 }
-.footer-item{
+
+.footer-item {
     flex-basis: 100%;
     width: 100%;
     height: 30px;
@@ -494,32 +528,37 @@ p.price-pr-card span {
     align-items: center;
     justify-content: space-between;
 }
-.delete-item{
+
+.delete-item {
     font-weight: 500;
     margin: 0;
     color: #0d6efd;
     cursor: pointer;
 }
-.delete-item:hover{
+
+.delete-item:hover {
     text-decoration: underline;
 }
-.price-item{
+
+.price-item {
     margin: 0;
     text-align: right;
     font-weight: bold;
     font-size: 18px;
 }
-.price-item::before{
+
+.price-item::before {
     content: '$';
 }
 
-.contenedor-total-items{
+.contenedor-total-items {
     text-align: center;
     width: 100%;
     padding: 10px 0;
     border-top: 3px double var(--morado);
 }
-.contenedor-total-items .total-estimado{
+
+.contenedor-total-items .total-estimado {
     /* color: #fff; */
     font-family: var(--ft-poppins);
 
@@ -528,20 +567,23 @@ p.price-pr-card span {
     justify-content: space-around;
     align-items: center;
 }
+
 /* -------------------------------------------------------------------------- */
 /*                              Estilos de perfil                             */
 /* -------------------------------------------------------------------------- */
-.profile-picture{
+.profile-picture {
     position: relative;
     width: 180px;
     height: 180px;
     border-radius: 100%;
 }
-.profile-picture > img{
+
+.profile-picture>img {
     width: 100%;
     object-fit: cover;
 }
-.upload_file{
+
+.upload_file {
     position: absolute;
     z-index: 10;
     bottom: 10px;
@@ -556,43 +598,49 @@ p.price-pr-card span {
     font-size: 20px;
     cursor: pointer;
 }
-.upload_file:hover{
+
+.upload_file:hover {
     background-color: #D8DADF;
 }
-.preview-photo{
+
+.preview-photo {
     position: relative;
 }
-.preview-photo.active{
+
+.preview-photo.active {
     padding-bottom: 56.25%;
 }
 
-.preview-photo > img{
+.preview-photo>img {
     position: absolute;
     object-fit: cover;
     width: 100%;
     height: 100%;
 }
-.aux-tab-content{
+
+.aux-tab-content {
     background-color: #191C1F;
     min-height: 390px;
- }
- .aux-nav-item {
+}
+
+.aux-nav-item {
     background-color: var(--morado) !important;
     font-family: var(--frale);
- }
- .aux-nav-link {
+}
+
+.aux-nav-link {
     background-color: var(--morado) !important;
     border-color: var(--morado) !important;
     color: #fff !important;
     transition-property: background-color, border-color, box-shadow;
     transition-duration: 0.15s;
     transition-timing-function: ease-in-out;
- }
+}
 
- .form-label{
+.form-label {
     font-family: var(--frale);
- }
- .aux-nav-link.active {
-    background-color: var(--morado-dark) !important;
- }
+}
 
+.aux-nav-link.active {
+    background-color: var(--morado-dark) !important;
+}
