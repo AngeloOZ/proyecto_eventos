@@ -37,7 +37,7 @@
                <h2 class="title">Registrate</h2>
                <div class="input-field">
                   <i class="fas fa-user"></i>
-                  <input id="r_name" type="text" placeholder="Nombres" required />
+                  <input id="r_name" type="text" placeholder="Nombres"  pattern="[a-zA-Z ]{2,254}" required />
                </div>
                <div class="input-field">
                   <i class="fas fa-envelope"></i>
@@ -49,7 +49,7 @@
                </div>
                 <div class="input-field">
                     <i class="fas fa-phone-alt"></i>
-                    <input id="r_tel" type="tel" placeholder="Telefono" required />
+                    <input id="r_tel" type="tel" placeholder="Telefono" pattern="[0-9]{10}" required />
                 </div>
                <input type="submit" class="btn" value="Registrarse" />
             </form>

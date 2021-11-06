@@ -564,7 +564,6 @@ p.price-pr-card span {
 }
 .preview-photo.active{
     padding-bottom: 56.25%;
-    background-color: red;
 }
 
 .preview-photo > img{
@@ -579,6 +578,7 @@ p.price-pr-card span {
  }
  .aux-nav-item {
     background-color: var(--morado) !important;
+    font-family: var(--frale);
  }
  .aux-nav-link {
     background-color: var(--morado) !important;
@@ -589,6 +589,10 @@ p.price-pr-card span {
     transition-timing-function: ease-in-out;
  }
 
+ .form-label{
+    font-family: var(--frale);
+ }
  .aux-nav-link.active {
     background-color: var(--morado-dark) !important;
  }
+

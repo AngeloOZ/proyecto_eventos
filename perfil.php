@@ -28,7 +28,8 @@ include_once 'layout/navegacion.php';
    </div>
 </div>
 <!-- modal /> -->
-<div class="container">
+<!-- <div class="container"> -->
+<div class="container editar_perfil">
    <!-- <h1 class="text-center mt-4" style="color: #fff;">Editar perfil</h1> -->
    <div class="container mt-4 d-flex justify-content-center my-3">
       <div class="profile-picture">
@@ -48,47 +49,51 @@ include_once 'layout/navegacion.php';
    <div class="tab-content aux-tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
          <form class="row g-4 p-4" autocomplete="off">
-            <div class="col-md-6">
-               <label for="inputNombre" class="form-label">Nombres</label>
-               <input type="text" class="form-control" id="inputNombre" placeholder="Jhon">
+            <div class="d-flex justify-content-around">
+               <div class="col-md-5">
+                  <label for="inputNombre" class="form-label">Nombres y Apellidos</label>
+                  <input type="text" class="form-control" id="inputNombre" placeholder="Jhon">
+               </div>
+               <div class="col-md-5">
+                  <label for="inputEmail4" class="form-label">Email</label>
+                  <input type="email" readonly class="form-control" id="inputEmail4" value="<?php echo $_SESSION['email']; ?>">
+               </div>
             </div>
-            <div class="col-md-6">
-               <label for="inputApellido" class="form-label">Apellidos</label>
-               <input type="text" class="form-control" id="inputApellido" placeholder="Doe">
+            <div class="d-flex justify-content-around">
+               <div class="col-md-5">
+                  <label for="inputUsuario" class="form-label">Cédula</label>
+                  <input type="text"  placeholder="User1" class="form-control" id="inputUsuario">
+               </div>
+               <div class="col-md-5">
+                  <label for="inputTelefono" class="form-label ">Teléfono</label>
+                  <input type="tel" class="form-control" id="inputTelefono" placeholder="0987654321">
+               </div>
+   
             </div>
-            <div class="col-md-6">
-               <label for="inputUsuario" class="form-label">Usuario</label>
-               <input type="text" readonly placeholder="User1" class="form-control" id="inputUsuario">
-            </div>
-            <div class="col-md-6">
-               <label for="inputEmail4" class="form-label">Email</label>
-               <input type="email" readonly class="form-control" id="inputEmail4" value="<?php echo $_SESSION['email']; ?>">
-            </div>
-            <div class="col-12">
-               <label for="inputUrlAvatar" class="form-label">Foto de perfil</label>
-               <input type="url" class="form-control" placeholder="http://www.dominio.com/mi-foto-perfil.jpg" id="inputUrlAvatar">
-            </div>
-            <div class="col-md-6">
-               <label for="inputTelefono" class="form-label">Teléfono</label>
-               <input type="tel" class="form-control" id="inputTelefono" placeholder="0987654321">
-            </div>
-            <div class="col-md-6">
-               <label for="inputCiudad" class="form-label">Ciudad</label>
-               <input type="text" class="form-control" id="inputCiudad" placeholder="Riobamba">
+            <div class="d-flex justify-content-around">
+            <div class="col-md-5">
+                  <label for="inputApellido" class="form-label">Ciudad</label>
+                  <input type="text" class="form-control" id="inputApellido" placeholder="Doe">
+               </div>
+               <div class="col-md-5">
+                  <label for="inputCiudad" class="form-label">Dirección</label>
+                  <input type="text" class="form-control" id="inputCiudad" placeholder="Riobamba">
+               </div>
             </div>
             <div class="col-12 text-center" id="button-save-profile">
-               <button type="submit" class="btn btn-purple">Guardar cambios</button>
-            </div>
+                  <button type="submit" class="btn btn-purple">Guardar cambios</button>
+               </div>
+
          </form>
       </div>
       <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
          <form class="row row-col-1 g-4 p-4">
-            <div class="col-md-7">
+            <div class="col-md-6">
                <label for="inputActPwd" class="form-label">Contraseña actual</label>
                <input type="password" class="form-control" id="inputActPwd">
             </div>
             <div class="col-md-5"></div>
-            <div class="col-md-7">
+            <div class="col-md-6">
                <label for="inputNewPwd" class="form-label">Nueva contraseña</label>
                <input type="password" id="inputNewPwd" class="form-control" aria-describedby="passwordHelpBlock">
                <div id="passwordHelpBlock" class="form-text">
@@ -96,7 +101,7 @@ include_once 'layout/navegacion.php';
                </div>
             </div>
             <div class="col-md-5"></div>
-            <div class="col-md-7">
+            <div class="col-md-6">
                <label for="inputConfirmPwd" class="form-label">Confirmar contraseña</label>
                <input type="password" id="inputConfirmPwd" class="form-control" aria-describedby="passwordHelpBlock">
                <div id="passwordHelpBlock" class="form-text">
