@@ -11,7 +11,7 @@
                 <p>Total estimado</p>
                 <p id="total-items-cart">0</p>
             </div>
-            <a href="#" class="btn btn-purple">Continuar al pago</a>
+            <a href="procesar_compra.php" class="btn btn-purple">Continuar al pago</a>
         </div>
     </div>
 </aside>

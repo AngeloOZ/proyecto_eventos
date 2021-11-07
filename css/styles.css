@@ -561,11 +561,15 @@ p.price-pr-card span {
 .contenedor-total-items .total-estimado {
     /* color: #fff; */
     font-family: var(--ft-poppins);
-
+    font-weight: 500;
+    font-size: 18px;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+#total-items-cart::before{
+    content: '$';
 }
 
 /* -------------------------------------------------------------------------- */
