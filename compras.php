@@ -1,84 +1,52 @@
 <?php
-  include_once 'layout/header.php';
-  include_once 'layout/navegacion.php';
+include_once 'layout/header.php';
+include_once 'layout/navegacion.php';
 ?>
-        <!-- Tabla -->
-        <h1 class="text-center mt-4">Compras</h1>
-        <div class="container-fluid">
-          <div class="row">
-              <div class="col-12">
-                  <div class="card">
-                      <div class="card-body">
-                          <div class="table-responsive">
-                              <table class="table table-striped table-bordered zero-configuration">
-                                  <thead>
-                                      <tr>
-                                          <th>Numero de Orden</th>
-                                          <th>Fecha</th>
-                                          <th>Total</th>
-                                          <th>Detalle</th>                                         
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                      <tr>
-                                          <td>123445</td>
-                                          <td>22/04/2021</td>
-                                          <td>$ 15</td>
-                                          <td>Ver factura</td>
-                                         
-                                      </tr>
-                                      <tr>
-                                          <td>343434</td>
-                                          <td>22/04/2021</td>
-                                          <td>$ 40</td>
-                                          <td>Ver factura</td>
-                                         
-                                      </tr>
-                                     
-                                      <tr>
-                                          <td>6543343</td>
-                                          <td>22/04/2021</td>
-                                          <td>$ 10</td>
-                                          <td>Ver factura</td>
-                                          
-                                      </tr>
-                                      <tr>
-                                          <td>523242</td>
-                                          <td>22/04/2021</td>
-                                          <td>$15</td>
-                                          <td>Ver factura</td>
-                                          
-                                      </tr>
-                                      <tr>
-                                          <td>75445</td>
-                                          <td>22/04/2021</td>
-                                          <td>$ 25</td>
-                                          <td>Ver factura</td>
-                                          
-                                      </tr>
-                                      <tr>
-                                          <td>6546465</td>
-                                          <td>22/04/2021</td>
-                                          <td>$ 10</td>
-                                          <td>Ver factura</td>
-                                          
-                                      </tr>                            
-                                  </tbody>
-                                  <tfoot>
-                                      <tr>
-                                        <th>Numero de Orden</th>
-                                        <th>Fecha</th>
-                                        <th>Total</th>
-                                        <th>Detalle</th>
-                                      </tr>
-                                  </tfoot>
-                              </table>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+<!-- Tabla -->
+<div class="container seccion-pagos">
+    <h1 class="storial-title">Historial de Compras </h1>
+    <div class="tabla-detalle-pago ">
+        <div class="row responsive-table">
+            <div class="col columnn-table">Transacción N°:
+                <div>123454</div>
+            </div>
+            <div class="col columnn-table"> Pedido Realizado:
+                <div class="">22 junio 2021 </div>
+            </div>
+            <div class="col columnn-table"> Entregado a:
+                <div>
+                    Jose Luis Perales
+                </div>
+            </div>
+            <div class="col columnn-table">Total: <div class="div">
+                    24.56$
+                </div>
+            </div>
+            <div class="col"><input class="btn_ver_recibo" type="text" value="Ver Recibo"></div>
+        </div>
+    </div>
+
+    <div class="tabla-detalle-pago ">
+        <div class="row responsive-table">
+            <div class="col columnn-table">Transacción N°:
+                <div>123454</div>
+            </div>
+            <div class="col columnn-table"> Pedido Realizado:
+                <div class="">22 junio 2021 </div>
+            </div>
+            <div class="col columnn-table"> Entregado a:
+                <div>
+                    Jose Luis Perales
+                </div>
+            </div>
+            <div class="col columnn-table">Total: <div class="div">
+                    24.56$
+                </div>
+            </div>
+            <div class="col"><input class="btn_ver_recibo" type="text" value="Ver Recibo"></div>
+        </div>
+    </div>
+</div>
 <?php
-    include_once 'layout/footer.php';    
+include_once 'layout/footer.php';
 ?>
