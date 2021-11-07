@@ -1,646 +1,692 @@
 :root {
-    --morado: #7952B3;
-    --morado-dark: #61428f;
-    --fkan: 'Charmonman', cursive;
-    --frale: 'Raleway', sans-serif;
-    --ft-baskervville: 'Baskervville', serif;
-    --ft-poppins: 'Poppins', sans-serif;
+  --morado: #7952b3;
+  --morado-dark: #61428f;
+  --fkan: "Charmonman", cursive;
+  --frale: "Raleway", sans-serif;
+  --ft-baskervville: "Baskervville", serif;
+  --ft-poppins: "Poppins", sans-serif;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .btn-purple {
-    background-color: var(--morado);
-    border-color: var(--morado);
-    color: #fff;
-    transition-property: background-color, border-color, box-shadow;
-    transition-duration: 0.15s;
-    transition-timing-function: ease-in-out;
+  background-color: var(--morado);
+  border-color: var(--morado);
+  color: #fff;
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
 }
 
 .btn-purple:hover {
-    background-color: var(--morado-dark);
-    border-color: var(--morado-dark);
-    color: #fff;
+  background-color: var(--morado-dark);
+  border-color: var(--morado-dark);
+  color: #fff;
 }
 
 .btn-purple:focus {
-    box-shadow: 0 0 0 3px rgba(121, 82, 179, 0.251)
+  box-shadow: 0 0 0 3px rgba(121, 82, 179, 0.251);
 }
 
 .aux-dropdown-item {
-    display: block;
-    width: 100%;
-    padding: 5px 10px;
-    clear: both;
-    font-weight: 400;
-    color: #212529;
-    text-align: inherit;
-    text-decoration: none;
-    white-space: nowrap;
-    background-color: transparent;
-    border: 0;
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
 }
 
 /* -------------------------------------------------------------------------- */
 /*                            Estilos para paralax                            */
 /* -------------------------------------------------------------------------- */
 .paralax * {
-    color: white;
-    z-index: 3;
-    position: relative;
+  color: white;
+  z-index: 3;
+  position: relative;
 }
 
 .paralax h1 {
-    font: 60px var(--fkan);
+  font: 60px var(--fkan);
 }
 
 .paralax P {
-    font: 20px var(--frale);
+  font: 20px var(--frale);
 }
 
 .paralax {
-    position: relative;
-    background-image: url(../img/paralax.jpg);
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    overflow: hidden;
+  position: relative;
+  background-image: url(../img/paralax.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
 }
 
 .paralax::before {
-    content: "";
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.4);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .paralax .contenido-paralax {
-    transition: 0.10s all ease;
+  transition: 0.1s all ease;
 }
 
 img.img-carousel {
-    max-height: 610px;
-    object-fit: cover;
-    image-rendering: auto;
+  max-height: 610px;
+  object-fit: cover;
+  image-rendering: auto;
 }
 
 .bg-btn-carousel:hover {
-    background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 700px) {
-    .paralax h1 {
-        font-size: 30px;
-    }
+  .paralax h1 {
+    font-size: 30px;
+  }
 }
-
 
 /* -------------------------------------------------------------------------- */
 /*                               Estilos de card                              */
 /* -------------------------------------------------------------------------- */
 .image-wrapper-card {
-    position: relative;
-    /** Relacion de aspecto
+  position: relative;
+  /** Relacion de aspecto
      * 16:9 -> 56.25%
      * 3:2 -> 66.66%
      * 4:3 -> 75%
      * 1:1 -> 100% */
-    padding-bottom: 75%;
+  padding-bottom: 75%;
 }
 
 .image-wrapper-card img {
-    position: absolute;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .card {
-    background-color: #191c1f;
+  background-color: #191c1f;
 }
 
 .card-body .card-title {
-    color: #fff;
-    font-family: var(--fkan);
-    /* font-family: var(--bs-font-sans-serif); */
-    font-weight: bold;
+  color: #fff;
+  font-family: var(--fkan);
+  /* font-family: var(--bs-font-sans-serif); */
+  font-weight: bold;
 }
 
 .card-body p {
-    margin: 0;
-    color: #fff;
-    font-family: var(--ft-poppins);
-    font-weight: 300;
-
+  margin: 0;
+  color: #fff;
+  font-family: var(--ft-poppins);
+  font-weight: 300;
 }
 
 p.event-price-card {
-    font-size: 22px;
-    color: var(--morado);
-    font-family: var(--ft-poppins);
-    font-weight: 700;
+  font-size: 22px;
+  color: var(--morado);
+  font-family: var(--ft-poppins);
+  font-weight: 700;
 }
 
 .btn-card {
-    margin-top: 10px;
-    font-family: var(--ft-poppins);
-    font-weight: 400;
+  margin-top: 10px;
+  font-family: var(--ft-poppins);
+  font-weight: 400;
 }
 
 nav {
-    z-index: 2;
+  z-index: 2;
 }
 
 /* -------------------------------------------------------------------------- */
 /*                       Estidos boton carrito y scroll                       */
 /* -------------------------------------------------------------------------- */
 .container-button-fixed {
-    display: flex;
-    position: fixed;
-    width: 100%;
-    height: 50px;
-    bottom: 0;
-    right: 0;
-    z-index: 100;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
 }
 
 .btn-float {
-    flex: 1;
-    border: none;
-    cursor: pointer;
-    font-size: 22px;
+  flex: 1;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
 }
 
 .btn-float#btn-cart:first-child {
-    border-right: 2px solid #000;
+  border-right: 2px solid #000;
 }
 
 footer#footer {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 @media (min-width: 768px) {
-    footer#footer {
-        margin-bottom: 0px;
-    }
+  footer#footer {
+    margin-bottom: 0px;
+  }
 
-    .container-button-fixed {
-        flex-direction: column;
-        height: 70px;
-        width: 60px;
-    }
+  .container-button-fixed {
+    flex-direction: column;
+    height: 70px;
+    width: 60px;
+  }
 
-    .container-button-fixed.two-button {
-        height: 140px;
-    }
+  .container-button-fixed.two-button {
+    height: 140px;
+  }
 
-    .btn-float#btn-cart:first-child {
-        border: unset;
-        border-bottom: 2px solid #000;
-    }
+  .btn-float#btn-cart:first-child {
+    border: unset;
+    border-bottom: 2px solid #000;
+  }
 }
 
 /* -------------------------------------------------------------------------- */
 /*                           Estilos card productos                           */
 /* -------------------------------------------------------------------------- */
 .text-productos {
-    color: #fff;
+  color: #fff;
 }
 
 .image-wrapper-card-pr {
-    margin: 6px;
-    position: relative;
-    /** Relacion de aspecto
+  margin: 6px;
+  position: relative;
+  /** Relacion de aspecto
      * 16:9 -> 56.25%
      * 3:2 -> 66.66%
      * 4:3 -> 75%
      * 1:1 -> 100% */
-    padding-bottom: 75%;
+  padding-bottom: 75%;
 }
 
 .image-wrapper-card-pr img {
-    border-radius: 2px;
-    position: absolute;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+  border-radius: 2px;
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .card-title-pr {
-    color: #fff;
-    font-family: var(--frale);
-    font-size: 24px;
-    margin-bottom: 10px;
+  color: #fff;
+  font-family: var(--frale);
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 p.price-pr-card {
-    font-size: 22px;
-    font-family: var(--ft-poppins);
-    font-weight: 500;
+  font-size: 22px;
+  font-family: var(--ft-poppins);
+  font-weight: 500;
 }
 
 p.category-pr {
-    width: 50%;
-    background-color: rgb(39, 39, 39);
-    border-radius: 0px 20px 30px 30px;
-    font-size: 15px;
-    margin-bottom: 5px;
-    opacity: 0.6;
+  width: 50%;
+  background-color: rgb(39, 39, 39);
+  border-radius: 0px 20px 30px 30px;
+  font-size: 15px;
+  margin-bottom: 5px;
+  opacity: 0.6;
 }
 
 p.price-pr-card span {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .contenedor-num-pr {
-    display: flex;
-    width: 85px;
-    height: 35px;
-    border: 1px solid var(--morado);
-    border-radius: 10px;
+  display: flex;
+  width: 85px;
+  height: 35px;
+  border: 1px solid var(--morado);
+  border-radius: 10px;
 }
 
 .contenedor-num-pr p,
 .contenedor-num-pr button {
-    flex: 1;
+  flex: 1;
 }
 
 .text-num-pr {
-    text-align: center;
-    line-height: 35px;
+  text-align: center;
+  line-height: 35px;
 }
 
 .btn-contador-add,
 .btn-contador-rest {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    color: #fff;
-    font-weight: 500;
-    font-size: 18px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
 }
 
 .btn-contador-add:hover,
 .btn-contador-rest:hover {
-    box-shadow: 0 0 6px var(--morado);
+  box-shadow: 0 0 6px var(--morado);
 }
 
 .btn-contador-rest {
-    border-right: 1px solid var(--morado);
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+  border-right: 1px solid var(--morado);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .btn-contador-add {
-    border-left: 1px solid var(--morado);
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+  border-left: 1px solid var(--morado);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .btn-card-cart {
-    height: 35px;
-    border: none;
-    width: 100%;
-    font-family: var(--ft-poppins);
-    font-weight: 400;
-    border-radius: 10px;
-    position: relative;
+  height: 35px;
+  border: none;
+  width: 100%;
+  font-family: var(--ft-poppins);
+  font-weight: 400;
+  border-radius: 10px;
+  position: relative;
 }
 
 .btn-card-cart::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 35px;
-    display: block;
-    background-color: transparent;
-    z-index: 10;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 35px;
+  display: block;
+  background-color: transparent;
+  z-index: 10;
 }
 
 .contenedor-btn-count {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 10px 0;
-    margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 0;
+  margin-top: 15px;
 }
 
 .card-product {
-    min-width: 250px;
+  min-width: 250px;
 }
 
 /* -------------------------------------------------------------------------- */
 /*                           Estilos detalle eventos                          */
 /* -------------------------------------------------------------------------- */
 #complete-detail {
-    background-color: #191c1f;
+  background-color: #191c1f;
 }
 
 .titulo-eve {
-    font-family: var(--fkan);
-    padding-bottom: 0.5em;
+  font-family: var(--fkan);
+  padding-bottom: 0.5em;
 }
 
 .ubi-eve {
-    padding-top: 1em;
-    font-weight: bold;
-    font-family: var(--frale);
-
+  padding-top: 1em;
+  font-weight: bold;
+  font-family: var(--frale);
 }
 
 .time {
-    font-family: var(--frale);
-    font-size: 20px;
-    font-weight: bold;
+  font-family: var(--frale);
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .time span {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 .precio-eve {
-    color: var(--morado);
-    font-weight: 500;
-    font-family: var(--ft-poppins);
-
+  color: var(--morado);
+  font-weight: 500;
+  font-family: var(--ft-poppins);
 }
 
 .btn_reserva_eve {
-    background-color: var(--morado);
-    font-family: var(--frale);
-    border: none;
-    font-weight: bold;
-    font-size: 20px;
-    margin-left: 2em;
+  background-color: var(--morado);
+  font-family: var(--frale);
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 2em;
 }
 
 .btn_reserva_eve:hover,
 .boton_contador_eventos:hover {
-    background-color: var(--morado-dark);
+  background-color: var(--morado-dark);
 }
 
 .boton_contador_eventos {
-    font-size: 25px;
-    background-color: var(--morado);
-    text-align: center;
+  font-size: 25px;
+  background-color: var(--morado);
+  text-align: center;
 }
 
 .formulario_cantidad {
-    border-radius: 0px;
-    font-weight: bold;
+  border-radius: 0px;
+  font-weight: bold;
 }
 
 .text-cont {
-    background-color: white;
-    color: black;
-    font-weight: bold;
-    text-align: center;
-    padding: 10px 0px;
-    margin: 0;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 0px;
+  margin: 0;
 }
 
 .mas_eventos h2 {
-    color: white;
-    text-align: center;
-    padding: 5vh 0 0vh 0;
-    font-family: var(--frale);
+  color: white;
+  text-align: center;
+  padding: 5vh 0 0vh 0;
+  font-family: var(--frale);
 }
 
 /* -------------------------------------------------------------------------- */
 /*                             Estilos de carrito                             */
 /* -------------------------------------------------------------------------- */
 .contenedor-preorden {
-    width: 360px !important;
+  width: 360px !important;
 }
 
 .sub-contenedor-preoden {
-    display: flex;
-    flex-direction: column;
-    /* background-color: #191c1f; */
-    width: 100%;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #191c1f; */
+  width: 100%;
+  height: 100%;
 }
 
 .contenedor-header-cart {
-    width: 100%;
-    background-color: var(--morado);
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+  width: 100%;
+  background-color: var(--morado);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
 .contenedor-header-cart .title-header-cart {
-    font-size: 22px;
-    font-family: var(--ft-poppins);
-    padding: 0;
-    margin: 0;
+  font-size: 22px;
+  font-family: var(--ft-poppins);
+  padding: 0;
+  margin: 0;
 }
 
 .contenedor-header-cart .push_right {
-    cursor: pointer;
-    font-size: 25px;
+  cursor: pointer;
+  font-size: 25px;
 }
 
 .contenedor-items-carro {
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    padding: 0 10px;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0 10px;
 }
 
 .contenedor-items-carro .item-carro {
-    width: 100%;
-    margin-top: 15px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    border-bottom: 1px solid #f1f1f2;
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #f1f1f2;
 }
 
 .contenedor-items-carro .item-carro:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .image-item {
-    width: 80px;
-    height: 90px;
+  width: 80px;
+  height: 90px;
 }
 
 .image-item img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .body-item {
-    width: 235px;
-    height: 90px;
-    display: flex;
-    justify-content: space-between;
-    overflow: hidden;
+  width: 235px;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
 .body-item .detail-item {
-    width: 60%;
-    height: 100%;
-    margin: 0;
-    font-size: 15px;
-    font-style: italic;
-    padding-left: 5px;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  width: 60%;
+  height: 100%;
+  margin: 0;
+  font-size: 15px;
+  font-style: italic;
+  padding-left: 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .body-item .quantity-item {
-    width: 30%;
-    margin: 0;
-    text-align: right;
-    font-weight: bold;
-    font-size: 18px;
+  width: 30%;
+  margin: 0;
+  text-align: right;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .body-item .quantity-item::before {
-    content: 'Cant: ';
+  content: "Cant: ";
 }
 
 .footer-item {
-    flex-basis: 100%;
-    width: 100%;
-    height: 30px;
-    padding: 20px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  flex-basis: 100%;
+  width: 100%;
+  height: 30px;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .delete-item {
-    font-weight: 500;
-    margin: 0;
-    color: #0d6efd;
-    cursor: pointer;
+  font-weight: 500;
+  margin: 0;
+  color: #0d6efd;
+  cursor: pointer;
 }
 
 .delete-item:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .price-item {
-    margin: 0;
-    text-align: right;
-    font-weight: bold;
-    font-size: 18px;
+  margin: 0;
+  text-align: right;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .price-item::before {
-    content: '$';
+  content: "$";
 }
 
 .contenedor-total-items {
-    text-align: center;
-    width: 100%;
-    padding: 10px 0;
-    border-top: 3px double var(--morado);
+  text-align: center;
+  width: 100%;
+  padding: 10px 0;
+  border-top: 3px double var(--morado);
 }
 
 .contenedor-total-items .total-estimado {
-    /* color: #fff; */
-    font-family: var(--ft-poppins);
+  /* color: #fff; */
+  font-family: var(--ft-poppins);
 
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /* -------------------------------------------------------------------------- */
 /*                              Estilos de perfil                             */
 /* -------------------------------------------------------------------------- */
 .profile-picture {
-    position: relative;
-    width: 180px;
-    height: 180px;
-    border-radius: 100%;
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 100%;
 }
 
-.profile-picture>img {
-    width: 100%;
-    object-fit: cover;
+.profile-picture > img {
+  width: 100%;
+  object-fit: cover;
 }
 
 .upload_file {
-    position: absolute;
-    z-index: 10;
-    bottom: 10px;
-    right: 10px;
-    margin: 0;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 100%;
-    background-color: #e4e6eb;
-    text-align: center;
-    font-size: 20px;
-    cursor: pointer;
+  position: absolute;
+  z-index: 10;
+  bottom: 10px;
+  right: 10px;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 100%;
+  background-color: #e4e6eb;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .upload_file:hover {
-    background-color: #D8DADF;
+  background-color: #d8dadf;
 }
 
 .preview-photo {
-    position: relative;
+  position: relative;
 }
 
 .preview-photo.active {
-    padding-bottom: 56.25%;
+  padding-bottom: 56.25%;
 }
 
-.preview-photo>img {
-    position: absolute;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+.preview-photo > img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .aux-tab-content {
-    background-color: #191C1F;
-    min-height: 390px;
+  background-color: #191c1f;
+  min-height: 390px;
 }
 
 .aux-nav-item {
-    background-color: var(--morado) !important;
-    font-family: var(--frale);
+  background-color: var(--morado) !important;
+  font-family: var(--frale);
 }
 
 .aux-nav-link {
-    background-color: var(--morado) !important;
-    border-color: var(--morado) !important;
-    color: #fff !important;
-    transition-property: background-color, border-color, box-shadow;
-    transition-duration: 0.15s;
-    transition-timing-function: ease-in-out;
+  background-color: var(--morado) !important;
+  border-color: var(--morado) !important;
+  color: #fff !important;
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
 }
 
 .form-label {
-    font-family: var(--frale);
+  font-family: var(--frale);
 }
 
 .aux-nav-link.active {
-    background-color: var(--morado-dark) !important;
+  background-color: var(--morado-dark) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                        Historial de   Compras                              */
+/* -------------------------------------------------------------------------- */
+.seccion-pagos {
+  height: 100%;
+}
+
+.tabla-detalle-pago {
+  background-color: #191c1f;
+  color: #fff;
+  font-family: var(--frale);
+  text-align: center;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(255, 255, 255, 0.205);
+  padding: 0 10px;
+}
+.storial-title {
+  color: white;
+  font-family: var(--frale);
+  font-size: 25px;
+  text-align: center;
+  margin: 20px;
+}
+
+.btn_ver_recibo {
+  margin: auto;
+  background-color: var(--morado);
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  border: none;
+  padding: 5px 2px;
+  margin: 15px 0px;
+}
+.columnn-table {
+  padding: 1em 0em;
+  font-size: 14px;
+}
+
+.columnn-table div {
+  font-weight: bold;
+}
+
+@media (max-width: 400px) {
+  .responsive-table {
+    display: flex;
+    flex-direction: column;
+  }
 }
