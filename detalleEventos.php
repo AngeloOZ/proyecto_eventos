@@ -6,7 +6,6 @@ $id =  base64_decode($_GET['id']);
 $datos = file_get_contents("https://roman-company.com/TrailerMovilApiRest/view/evento.php/unico?id_evento=" . $id);
 $products = json_decode($datos, true)['datos'][0];
 
-
 $nombre = $products['nombre'];
 $detalle = $products['detalle'];
 $ubicacion = $products['ubicacion'];
@@ -18,18 +17,12 @@ $precio = $products['precio'];
 $estado = $products['estado'];
 $contador_cards = 0;
 
-
-
 // JSON VARIABLES 
-
-$URL_BASE = "http://localhost/VC7/MovilTailerCliente/";
-///$URL_BASE = "http://localhost/proyecto_eventos/";
 $data = file_get_contents('https://roman-company.com/TrailerMovilApiRest/view/evento.php?estado=active');
 $eventos = json_decode($data)->datos;
 
 include_once 'layout/header.php';
 include_once 'layout/navegacion.php';
-
 
 ?>
 <!-- Product section-->
@@ -79,7 +72,6 @@ include_once 'layout/navegacion.php';
             </div>
         </div>
 </section>
-
 
 <!-- mas eventos  -->
 <section class="mas_eventos">
@@ -160,7 +152,6 @@ include_once 'layout/navegacion.php';
         </div>
     </div>
 </div> -->
-
 
 <?php
 include_once 'layout/footer.php';
