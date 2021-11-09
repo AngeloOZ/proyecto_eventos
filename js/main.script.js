@@ -13,7 +13,8 @@ window.addEventListener('load', (event) => {
     loader.classList.remove('active-loader');
     setTimeout(() => {
         loader.remove();
-    }, 600)
+    }, 600);
+    sendServiceEvaluation();
 });
 
 /* -------------------------------------------------------------------------- */
@@ -259,3 +260,31 @@ function sendSweetAlert(icon = 'success', title, message) {
     })
 }
 
+function sendServiceEvaluation(){
+    const cookies = document.cookie.split(" ");
+    let band = false;
+
+    cookies.forEach(cookie =>{
+        if(cookie.indexOf("stateEvaluated") != -1){
+            const aux = cookie.split("=");
+            if(aux[1] === 'true'){
+                band = true;
+            }else{
+                band = false;
+            }
+        }
+    })
+    if(!band){
+        setCookieValue();
+        setTimeout(() => {
+            alert("Califica nuestro servicio")
+        }, 10000);
+    }
+}
+
+function setCookieValue(band = false){
+    const date = new Date();
+    date.setTime(date.getTime()+365*24*3600*1000);
+    const expire = `expires=${date.toUTCString()}`
+    document.cookie = `stateEvaluated=${band};${expire};path=/`
+}
