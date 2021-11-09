@@ -7,7 +7,6 @@ $datos = file_get_contents("https://roman-company.com/TrailerMovilApiRest/view/e
 $products = json_decode($datos, true)['datos'][0];
 
 
-
 $nombre = $products['nombre'];
 $detalle = $products['detalle'];
 $ubicacion = $products['ubicacion'];
@@ -17,6 +16,8 @@ $fecha_evento = $array_tiempo[0];
 $hora_evento = $array_tiempo[1];
 $precio = $products['precio'];
 $estado = $products['estado'];
+$contador_cards = 0;
+
 
 
 // JSON VARIABLES 
@@ -50,7 +51,7 @@ include_once 'layout/navegacion.php';
                         </div>
 
                         <div class="fs-1 precio-eve">
-                            <span><?php echo  '$' . $precio ?></span>
+                            <span><?php echo  '$' . number_format($precio,2) ?></span>
 
                         </div>
                         <div class="row ubi-eve">
@@ -89,16 +90,20 @@ include_once 'layout/navegacion.php';
                 <?php foreach ($eventos as $evento) :
                     $fecha = explode(" ", $evento->fecha_evento)[1];
                     $id_evento = base64_encode($evento->id_evento);
+                    
+                    if ($id == ($evento->id_evento) ){
+                        continue;
+                    }
                 ?>
                     <!-- card -->
-                    <div class="col-12 col-sm-6 col-md-5 col-lg-4">
+                    <div class="col-12 col-sm-6 col-md-5 col-lg-3">
                         <div class="card m-auto border-0">
                             <div class="image-wrapper-card">
                                 <img src="<?php echo $evento->foto; ?>" alt="<?php echo $evento->nombre; ?>">
                             </div>
                             <div class="card-body text-center">
                                 <h3 class="card-title"><?php echo $evento->nombre; ?></h3>
-                                <p class="event-price-card"><i class="bi bi-currency-dollar"></i><strong><?php echo $evento->precio; ?></strong></p=>
+                                <p class="event-price-card"><i class="bi bi-currency-dollar"></i><strong><?php echo number_format($evento->precio,2); ?></strong></p=>
                                 <p><i class="bi bi-calendar-date"></i> <strong><?php echo $fecha; ?></strong></p>
                                 <p><i class="bi bi-geo-alt-fill"></i> <strong><?php echo $evento->ubicacion; ?></strong></p>
                                 <a href="<?php echo "./detalleEventos.php?id=" . $id_evento; ?>" class="btn btn-card btn-purple">Ver más</a>
@@ -106,7 +111,13 @@ include_once 'layout/navegacion.php';
                         </div>
                     </div>
                     <!-- card /> -->
-                <?php endforeach; ?>
+
+                <?php
+                $contador_cards++;
+                if ($contador_cards >= 4){
+                    break;
+                }
+             endforeach; ?>
             </div>
         </div>
     </div>
