@@ -3,7 +3,7 @@ include_once 'layout/header.php';
 include_once 'layout/navegacion.php';
 ?>
 <!-- Tabla -->
-<div class="container seccion-pagos">
+<div class="container seccion-pagos" style="min-height: 400px;">
     <h1 class="storial-title">Historial de Compras </h1>
     <div class="tabla-detalle-pago ">
         <div class="row responsive-table">
@@ -46,6 +46,9 @@ include_once 'layout/navegacion.php';
             <div class="col"><input class="btn_ver_recibo" type="text" value="Ver Recibo"></div>
         </div>
     </div>
+</div>
+<div class="container-button-fixed">
+    <button class="btn-float btn-purple" id="btn-top"><i class="bi bi-caret-up-fill"></i></button>
 </div>
 <?php
 include_once 'layout/footer.php';

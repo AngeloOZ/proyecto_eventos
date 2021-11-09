@@ -3,7 +3,6 @@
   --morado-dark: #61428f;
   --fkan: "Charmonman", cursive;
   --frale: "Raleway", sans-serif;
-  --ft-baskervville: "Baskervville", serif;
   --ft-poppins: "Poppins", sans-serif;
 }
 
@@ -557,16 +556,16 @@ p.price-pr-card span {
 .contenedor-total-items .total-estimado {
   /* color: #fff; */
   font-family: var(--ft-poppins);
-    font-weight: 500;
-    font-size: 18px;
+  font-weight: 500;
+  font-size: 18px;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-#total-items-cart::before{
-    content: '$';
+#total-items-cart::before {
+  content: '$';
 }
 
 /* -------------------------------------------------------------------------- */
@@ -579,7 +578,7 @@ p.price-pr-card span {
   border-radius: 100%;
 }
 
-.profile-picture > img {
+.profile-picture>img {
   width: 100%;
   object-fit: cover;
 }
@@ -612,7 +611,7 @@ p.price-pr-card span {
   padding-bottom: 56.25%;
 }
 
-.preview-photo > img {
+.preview-photo>img {
   position: absolute;
   object-fit: cover;
   width: 100%;
@@ -662,6 +661,7 @@ p.price-pr-card span {
   border-bottom-color: rgba(255, 255, 255, 0.205);
   padding: 0 10px;
 }
+
 .storial-title {
   color: white;
   font-family: var(--frale);
@@ -680,6 +680,7 @@ p.price-pr-card span {
   padding: 5px 2px;
   margin: 15px 0px;
 }
+
 .columnn-table {
   padding: 1em 0em;
   font-size: 14px;
@@ -694,4 +695,85 @@ p.price-pr-card span {
     display: flex;
     flex-direction: column;
   }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                           Estilos Procesar compra                          */
+/* -------------------------------------------------------------------------- */
+.color-fff {
+  color: #fff !important;
+}
+
+.th-header-pyts {
+  background-color: var(--morado);
+}
+
+.th-header-pyts>th {
+  padding: 15px;
+  color: #fff;
+}
+
+.tr-body-pyts {
+  color: #fff;
+}
+
+.tfoot-tr>td {
+  color: #fff;
+}
+
+.th-header-pyts>th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.th-header-pyts>th:last-child {
+  border-top-right-radius: 10px;
+}
+
+.tbody-custom {
+  box-shadow: 0 0 2px rgba(255, 255, 255, 1) inset;
+}
+
+td.aux-shadow {
+  box-shadow: 0 0 2px rgba(255, 255, 255, 1) inset !important;
+}
+
+span#label-total {
+  display: inline-block;
+  background-color: var(--morado);
+  height: 40px;
+  width: 100px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+.label-infor {
+  font-weight: bold;
+}
+
+.form-control.aux-label {
+  background-color: #212529 !important;
+  color: #fff;
+  border: none;
+}
+
+.btn-realizar-pago {
+  font-size: 18px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: var(--frale);
+}
+
+.main-order-container {
+  background-color: #191c1f;
+  border-radius: 10px;
+}
+
+.contenedor-tabla {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.contenedor-tabla::-webkit-scrollbar {
+  display: none;
 }

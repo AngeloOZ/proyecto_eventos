@@ -115,7 +115,9 @@ include_once 'layout/navegacion.php';
       </div>
    </div>
 </div>
-
+<div class="container-button-fixed">
+    <button class="btn-float btn-purple" id="btn-top"><i class="bi bi-caret-up-fill"></i></button>
+</div>
 <?php
 include_once 'layout/footer.php';
 ?>

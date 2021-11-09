@@ -27,7 +27,7 @@
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
-                            <li><a class="dropdown-item" href="./perfil.php">Ajustes</a></li>
+                            <li><a class="dropdown-item" href="./perfil.php">Editar perfil</a></li>
                             <li><a class="dropdown-item" href="./cerrar_session.php">Cerrar sesion</a></li>
                         </ul>
                     </li>
