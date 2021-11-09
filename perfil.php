@@ -49,40 +49,39 @@ include_once 'layout/navegacion.php';
    <div class="tab-content aux-tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
          <form class="row g-4 p-4" autocomplete="off">
-            <div class="d-flex justify-content-around">
-               <div class="col-md-5">
+            <div class="d-flex flex-column flex-md-row justify-content-around">
+               <div class="col-md-5 mb-2">
                   <label for="inputNombre" class="form-label">Nombres y Apellidos</label>
                   <input type="text" class="form-control" id="inputNombre" placeholder="Jhon">
                </div>
-               <div class="col-md-5">
+               <div class="col-md-5 mb-2">
                   <label for="inputEmail4" class="form-label">Email</label>
                   <input type="email" readonly class="form-control" id="inputEmail4" value="<?php echo $_SESSION['email']; ?>">
                </div>
             </div>
-            <div class="d-flex justify-content-around">
-               <div class="col-md-5">
+            <div class="d-flex flex-column flex-md-row  justify-content-around">
+               <div class="col-md-5 mb-2">
                   <label for="inputUsuario" class="form-label">Cédula</label>
-                  <input type="text"  placeholder="User1" class="form-control" id="inputUsuario">
+                  <input type="text" placeholder="User1" class="form-control" id="inputUsuario">
                </div>
-               <div class="col-md-5">
+               <div class="col-md-5 mb-2">
                   <label for="inputTelefono" class="form-label ">Teléfono</label>
                   <input type="tel" class="form-control" id="inputTelefono" placeholder="0987654321">
                </div>
-   
             </div>
-            <div class="d-flex justify-content-around">
-            <div class="col-md-5">
+            <div class="d-flex flex-column flex-md-row  justify-content-around">
+               <div class="col-md-5 mb-2">
                   <label for="inputApellido" class="form-label">Ciudad</label>
                   <input type="text" class="form-control" id="inputApellido" placeholder="Doe">
                </div>
-               <div class="col-md-5">
+               <div class="col-md-5 mb-2">
                   <label for="inputCiudad" class="form-label">Dirección</label>
                   <input type="text" class="form-control" id="inputCiudad" placeholder="Riobamba">
                </div>
             </div>
             <div class="col-12 text-center" id="button-save-profile">
-                  <button type="submit" class="btn btn-purple">Guardar cambios</button>
-               </div>
+               <button type="submit" class="btn btn-purple">Guardar cambios</button>
+            </div>
 
          </form>
       </div>
@@ -116,7 +115,7 @@ include_once 'layout/navegacion.php';
    </div>
 </div>
 <div class="container-button-fixed">
-    <button class="btn-float btn-purple" id="btn-top"><i class="bi bi-caret-up-fill"></i></button>
+   <button class="btn-float btn-purple" id="btn-top"><i class="bi bi-caret-up-fill"></i></button>
 </div>
 <?php
 include_once 'layout/footer.php';
