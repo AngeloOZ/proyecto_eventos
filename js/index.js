@@ -15,7 +15,6 @@ sign_in_btn.addEventListener("click", () => {
 
 formIniciarSesion.addEventListener('submit', async e => {
    e.preventDefault();
-   console.log('Holaa');
    const url = "https://roman-company.com/TrailerMovilApiRest/view/login.php";
    const data = {
       codigo: "cliente",
@@ -31,21 +30,23 @@ formIniciarSesion.addEventListener('submit', async e => {
          }
       })
       const response = await request.json();
-      if(response.status == 200){
+      if (response.status == 200) {
          sendDataRest(response.datos)
-      }else{
+      } else {
          Swal.fire(
             'Oppss!',
             'El usuario o la contraseña no son correctas',
             'error'
-          )
+         )
       }
    } catch (error) {
       console.log(error);
+   } finally {
+      formIniciarSesion.reset();
    }
 });
 
-async function sendDataRest(data){
+async function sendDataRest(data) {
    const request = await fetch("./rest/session.php", {
       method: "POST",
       body: JSON.stringify(data),
@@ -54,14 +55,14 @@ async function sendDataRest(data){
       }
    });
    const response = await request.json();
-   if(response.status == 200){
+   if (response.status == 200) {
       location.href = "home.php";
-   }else{
+   } else {
       Swal.fire(
          'Oppss!',
          'Hubo un error interno, intentalo de nuevo',
          'error'
-       )
+      )
    }
 }
 
@@ -73,8 +74,8 @@ function clientRegister(data) {
       headers: {
          'Content-Type': 'application/json'
       }
-   }).then(res => res.json())
-      .catch(error => console.error('Error:', error))
+   })
+      .then(res => res.json())
       .then(response => {
          const Toast = Swal.mixin({
             toast: true,
@@ -91,8 +92,9 @@ function clientRegister(data) {
          Toast.fire({
             icon: 'success',
             title: 'Registrado con Éxito'
-          }) 
-    });
+         })
+      })
+      .catch(console.log);
 }
 
 function getDataClient() {
@@ -114,8 +116,6 @@ function getDataClient() {
       clientRegister(datos);
       regis_form.reset();
       btn_log.click();
-
    });
-
 }
 
