@@ -1,3 +1,18 @@
+    <!-- MODAL VALÓRANOS -->
+    <!-- <div class="contenedor-valoranos">
+        <p class="text">
+            Te gusto nuestra Web, <b>Valóranos </b>
+        </p>
+        <div class="stars">
+            <i class="bi bi-star-fill "></i>
+            <i class="bi bi-star-fill "></i>
+            <i class="bi bi-star-fill "></i>
+            <i class="bi bi-star-fill "></i>
+            <i class="bi bi-star-fill "></i>
+        </div>
+    </div> -->
+
+
     <!-- Footer -->
     <footer class="bg-dark text-center text-white" id="footer">
         <!-- Grid container -->
@@ -32,7 +47,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <!-- Scrip Propios -->
     <script>
-        const user_credencials= {
+        const user_credencials = {
             email: "<?php echo $_SESSION["email"] ?>",
             nombre: "<?php echo $_SESSION["name"] ?>",
         }
@@ -40,4 +55,5 @@
     <script src="js/main.script.js"></script>
     <script src="js/paralax.js"></script>
     </body>
-</html>
+
+    </html>

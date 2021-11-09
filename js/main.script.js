@@ -258,3 +258,4 @@ function sendSweetAlert(icon = 'success', title, message) {
         text: message,
     })
 }
+
