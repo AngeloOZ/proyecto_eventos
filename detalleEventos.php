@@ -44,7 +44,7 @@ include_once 'layout/navegacion.php';
                         </div>
 
                         <div class="fs-1 precio-eve">
-                            <span><?php echo  '$' . number_format($precio,2) ?></span>
+                            <span><?php echo  '$' . number_format($precio, 2) ?></span>
 
                         </div>
                         <div class="row ubi-eve">
@@ -55,14 +55,14 @@ include_once 'layout/navegacion.php';
                             <div class="col-1 boton_contador_eventos " onclick="subtractContadorProducts(this)">
                                 <i class="bi bi-chevron-left"></i>
                             </div>
-                            <p class="text-cont   col-1 ">1</p>
+                            <p class="text-cont col-1" id="cantidad-asientos-event">1</p>
                             <div class="col-1 boton_contador_eventos" onclick="addContadorProducts(this)">
                                 <i class="bi bi-chevron-right"></i>
                             </div>
 
                             <!-- Button trigger modal -->
                             <div class="col-4">
-                                <button type="button" class="btn btn-primary btn_reserva_eve" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <button type="button" onclick="generarAsientos(35)" class="btn btn_reserva_eve" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Reservar
                                 </button>
                             </div>
@@ -82,8 +82,8 @@ include_once 'layout/navegacion.php';
                 <?php foreach ($eventos as $evento) :
                     $fecha = explode(" ", $evento->fecha_evento)[1];
                     $id_evento = base64_encode($evento->id_evento);
-                    
-                    if ($id == ($evento->id_evento) ){
+
+                    if ($id == ($evento->id_evento)) {
                         continue;
                     }
                 ?>
@@ -95,7 +95,7 @@ include_once 'layout/navegacion.php';
                             </div>
                             <div class="card-body text-center">
                                 <h3 class="card-title"><?php echo $evento->nombre; ?></h3>
-                                <p class="event-price-card"><i class="bi bi-currency-dollar"></i><strong><?php echo number_format($evento->precio,2); ?></strong></p=>
+                                <p class="event-price-card"><i class="bi bi-currency-dollar"></i><strong><?php echo number_format($evento->precio, 2); ?></strong></p=>
                                 <p><i class="bi bi-calendar-date"></i> <strong><?php echo $fecha; ?></strong></p>
                                 <p><i class="bi bi-geo-alt-fill"></i> <strong><?php echo $evento->ubicacion; ?></strong></p>
                                 <a href="<?php echo "./detalleEventos.php?id=" . $id_evento; ?>" class="btn btn-card btn-purple">Ver más</a>
@@ -105,11 +105,11 @@ include_once 'layout/navegacion.php';
                     <!-- card /> -->
 
                 <?php
-                $contador_cards++;
-                if ($contador_cards >= 4){
-                    break;
-                }
-             endforeach; ?>
+                    $contador_cards++;
+                    if ($contador_cards >= 4) {
+                        break;
+                    }
+                endforeach; ?>
             </div>
         </div>
     </div>
@@ -118,40 +118,58 @@ include_once 'layout/navegacion.php';
     </div>
 </section>
 <!-- Modal -->
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal-dialog modal-fullscreen"> -->
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Estado de asientos</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Seleccione su asiento</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="text-center">
-                    <span class="badge bg-primary">Disponible</span>
-                    <span class="badge bg-success">Reservado</span>
-                    <span class="badge bg-danger">Pendiente</span>
+                <div class="container">
+                    <div class="d-flex justify-content-around">
+                        <div class="d-flex flex-column align-items-center">
+                            <p>Disponible</p>
+                            <label for="1" class="asiento">
+                                <input type="checkbox" disabled name="asientos" id="1" class="check">
+                                <img src="./img/chair.svg" class="img-chair">
+                                <span></span>
+                                <p>A-1</p>
+                            </label>
+                        </div>
+                        <div class="d-flex flex-column align-items-center">
+                            <p>Seleccionado</p>
+                            <label for="" class="asiento">
+                                <input type="checkbox" checked disabled name="asientos" class="check">
+                                <img src="./img/chair.svg" class="img-chair">
+                                <span></span>
+                                <p>A-2</p>
+                            </label>
+                        </div>
+                        <div class="d-flex flex-column align-items-center">
+                            <p>Reservado</p>
+                            <label for="" class="asiento reserved">
+                                <input type="checkbox" name="asientos" disabled class="check">
+                                <img src="./img/chair.svg" class="img-chair">
+                                <span></span>
+                                <p>A-3</p>
+                            </label>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-check form-check-inline">
-                    <i class="bi bi-safe text-primary"></i>
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                    <label class="form-check-label" for="inlineRadio1">1</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">2</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
-                    <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+                <h3 class="text-center my-3">Listado de asientos</h3>
+                <div class="container">
+                    <div class="row d-flex justify-content-center" id="contenedor-asientos"></div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Guardar reservación</button>
+                <button type="button" class="btn btn-purple">Guardar reservación</button>
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 <?php
 include_once 'layout/footer.php';

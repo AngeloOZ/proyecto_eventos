@@ -1,18 +1,22 @@
     <!-- MODAL VALÓRANOS -->
-    <!-- <div class="contenedor-valoranos">
-        <p class="text">
-            Te gusto nuestra Web, <b>Valóranos </b>
-        </p>
-        <div class="stars">
-            <i class="bi bi-star-fill "></i>
-            <i class="bi bi-star-fill "></i>
-            <i class="bi bi-star-fill "></i>
-            <i class="bi bi-star-fill "></i>
-            <i class="bi bi-star-fill "></i>
+    <div class="contenedor-modal-valoranos" id="contenedor-modal-valoranos">
+        <div class="contenedor-valoranos">
+            <p class="text">
+                Te gustaría ayudarnos con tu opinión, <b>Valóranos </b>
+            </p>
+            <div class="stars" id="container-star">
+                <i class="bi bi-star-fill " data-value="5"></i>
+                <i class="bi bi-star-fill " data-value="4"></i>
+                <i class="bi bi-star-fill " data-value="3"></i>
+                <i class="bi bi-star-fill " data-value="2"></i>
+                <i class="bi bi-star-fill " data-value="1"></i>
+            </div>
+            <div class="buttons-valoranos">
+                <button class="btn btn-outline-danger" id="btn-cancell-value">Quiza más tarde</button>
+                <button class="btn btn-purple" id="btn-send-value">Enviar valoración</button>
+            </div>
         </div>
-    </div> -->
-
-
+    </div>
     <!-- Footer -->
     <footer class="bg-dark text-center text-white" id="footer">
         <!-- Grid container -->
