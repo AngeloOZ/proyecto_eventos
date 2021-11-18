@@ -20,7 +20,7 @@ $articulos = json_decode($data, true)["datos"];
 // Obtenemos informacion del usuario
 $dataClient = get_data_client($email);
 ?>
-
+<script src="js/jquery-3.6.0.js"></script>
 <main class="container-lg mt-5 p-3 px-4 main-order-container" id="resumenOrden">
     <!-- informacion -->
     <div class="row g-3 color-fff">
@@ -90,13 +90,120 @@ $dataClient = get_data_client($email);
             </tfoot>
         </table>
     </div>
-    <div class="d-flex justify-content-center mt-3">
+    <!--<div class="d-flex justify-content-center mt-3">
         <button class="btn btn-purple btn-realizar-pago">Realizar pago</button>
-    </div>
+    </div>-->
 </main>
 <div class="container-button-fixed">
     <button class="btn-float btn-purple" id="btn-top"><i class="bi bi-caret-up-fill"></i></button>
 </div>
+<br>
+<div id="smart-button-container">
+    <div style="text-align: center;">
+        <div id="paypal-button-container"></div>
+    </div>
+</div>
+<script src="https://www.paypal.com/sdk/js?client-id=AW5M_dedVij9riC3tZgWWL7mY7oXZFbWmZiv3oVcwbpRhzt5AhHp_x9Q1WmVLRLiaxgXgkomfSZJvVPx&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+<script>
+    let compra  = null
+    function initPayPalButton() {
+        paypal.Buttons({
+            style: {
+                shape: 'pill',
+                color: 'blue',
+                layout: 'vertical',
+                label: 'pay',
+
+            },
+
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{"amount":{"currency_code":"USD","value":'<?php echo number_format($total, 2); ?>'}}]
+                });
+            },
+
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(orderData)
+                {
+                    console.log('COMPRA REALIZADA CON EXITO')
+                    // Full available details
+                    /*console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+                    console.log("//////////////////////////////////////////////////////////")*/
+                    var jsonData = JSON.parse(JSON.stringify(orderData))
+                    compra = jsonData.purchase_units[0].payments.captures[0].id;
+
+                    // Show a success message within this page, e.g.
+                    /*const element = document.getElementById('paypal-button-container');
+                    element.innerHTML = '';
+                    element.innerHTML = '<h3>Thank you for your payment!</h3>';*/
+
+                    saveBD()
+
+
+
+                    // Or go to another URL:  actions.redirect('thank_you.html');
+
+                });
+            },
+
+            onError: function(err)
+            {
+                compra = null
+                console.log(err);
+            }
+        }).render('#paypal-button-container');
+    }
+    initPayPalButton();
+    function saveBD()
+    {
+        $.ajax({
+            url:"https://roman-company.com/TrailerMovilApiRest/view/cliente.php/compra",
+            method:"POST",
+            data:JSON.stringify({
+                email:'<?php echo $_SESSION["email"];?>',
+                estado:1,
+                tipo:1,
+                recibo:compra})
+        }).done(function(datos)
+        {
+            var json_string = JSON.stringify(datos)
+            var json_parse = JSON.parse(json_string)
+
+            if (json_parse.status == 200)
+            {
+
+                Swal.fire({
+                    title: 'Pago realizado con éxito',
+                    text: "ID transacción #"+compra,
+                    icon: 'success',
+                    showCancelButton: false,
+                    confirmButtonColor: '#61428f',
+                    allowOutsideClick:false,
+                    confirmButtonText: 'Seguir Comprando'
+                }).then((result) =>
+                {
+                    window.location.href = "./productos.php"
+                })
+
+            }else{
+                Swal.fire(
+                    'Error BASE DATOS ROMMAN COMPANY',
+                    'No se ha podido guardar el pago.',
+                    'error'
+                )
+            }
+
+        }).fail(function(error){
+            alert('ERROR SERVER ROMMAN COMPANY')
+        })
+    }
+</script>
+<style>
+    p{
+        color: white !important;
+    }
+</style>
 <?php
 include_once 'layout/footer.php';
 ?>
