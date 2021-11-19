@@ -27,7 +27,7 @@
     transition-property: opacity, visibility;
     transition-duration: 0.5s;
     transition-timing-function: ease-out;
-    background-color: rgba(7, 7, 7, 0.781);
+    background-color: #191c1f;
 }
 
 .loader{

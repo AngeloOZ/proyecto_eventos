@@ -7,9 +7,12 @@
   --frale: "Raleway", sans-serif;
   --ft-poppins: "Poppins", sans-serif;
 }
-
+body{
+  color: white;
+}
 html {
   scroll-behavior: smooth;
+
 }
 
 .btn-purple {
@@ -782,6 +785,8 @@ span#label-total {
   display: none;
 }
 
+
+
 /* MODAL PARA VALORAR PÁGINA WEB */
 .contenedor-modal-valoranos {
   position: fixed;
@@ -941,3 +946,4 @@ span#label-total {
   border: 2px solid #007bff;
   box-shadow: 0 0 3px #007bff;
 }
+
