@@ -26,20 +26,20 @@ if (isset($_GET["f"])){
 <body  style="text-align:center; font-family:'Courier New', Courier, monospace">
     <div  style=" font-size: 12px; padding: 0; margin: 0; box-sizing: border-box;" class="contenedor">
     <h1 style="font-size: 15px;">TRAILER MOVIL EVENTS</h1>
-    <p  style="">Telf: 032987775</p>
+    <p">Telf: 032987775</p>
+    <p><?php echo $recibo[0]['fecha_registro'] ;?></p>
     <p>-------------------------------------</p>
-    <p style="">Recibo de Pago</p>
+    <p style="">Recibo N° <?php echo $recibo[0]['id_factura'] ;?> <span> </span></p>
     <p>-------------------------------------</p>
     <?php 
     foreach ($recibo as $recibos):
     ?>
-        <div  style="display:flex;    justify-content: space-between;     flex-direction: row;" >
-        <p><?php echo $recibos['cantidad']."  ".$recibos['detalle']?></p>
-        <p><?php echo $recibos['precioUni'] ?></p>
-        </div>
+        <p><?php echo $recibos['cantidad']."  ".$recibos['detalle'];?> <span style="align-items: right"><?php echo $recibos['precioUni'] ;?> </span></p>
     <?php 
     endforeach;
     ?>
+    <p>-------------------------------------</p>
+    <H1  style="font-size: 12px;  ">Total: $ <?php  echo $recibos['precioTU'];?></H1>
     <p>-------------------------------------</p>
     </div>
 </body>
