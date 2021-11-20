@@ -684,7 +684,7 @@ p.price-pr-card span {
   border-radius: 10px;
   text-align: center;
   border: none;
-  padding: 5px 2px;
+  padding: 5px 20px;
   margin: 15px 0px;
 }
 
@@ -946,4 +946,3 @@ span#label-total {
   border: 2px solid #007bff;
   box-shadow: 0 0 3px #007bff;
 }
-

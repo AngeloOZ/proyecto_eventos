@@ -1,0 +1,16 @@
+body{
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0; 
+}
+
+.contenedor{
+    /* width: 227.27 ; */
+}
+h1{
+    font-size: 10px;
+    color: aqua;
+    justify-content: space-around;
+
+
+}

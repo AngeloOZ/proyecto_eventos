@@ -1,12 +1,11 @@
 <?php
-
 include_once 'layout/header.php';
 include_once 'layout/navegacion.php';
 $data = file_get_contents('https://roman-company.com/TrailerMovilApiRest/view/compras.php/general?email='.$_SESSION['email'].'');
 $compras = json_decode($data, true)['datos'];
 $compras =($compras== null)?[]:$compras;
-
 ?>
+
 <!-- Tabla -->
 
 <div class="container seccion-pagos" style="min-height: 400px;">
@@ -14,6 +13,9 @@ $compras =($compras== null)?[]:$compras;
 
 <?php 
     foreach($compras as $compra ):
+    $dta_url =[$compra['id_factura'],$compra['paypal']];
+    $dta_url = json_encode($dta_url);
+    $dta_url = base64_encode($dta_url);
 ?>
     <div class="tabla-detalle-pago ">
         <div class="row responsive-table">
@@ -32,7 +34,7 @@ $compras =($compras== null)?[]:$compras;
             <?php echo $compra['total_factura'] ?>
                 </div>
             </div>
-            <div class="col"><input class="btn_ver_recibo" type="text" value="Ver Recibo"></div>
+            <b class="col"><a href="./pdf/recibo.php?f=<?php echo $dta_url;?>" class="btn btn_ver_recibo">Ver Recibo</a></b>
         </div>
     </div>
 <?php
