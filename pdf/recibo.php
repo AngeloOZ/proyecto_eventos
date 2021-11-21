@@ -59,10 +59,22 @@ $total = 0;
             padding: 0;
             margin: 0;
         }
-
-        .valorTotal {
+        .contenedor-total{
+            width: 100%;
+            text-align: left;
+        }
+        .texto-total {
+            display: inline-block;
             font-size: 12px;
             text-align: left;
+            padding: 0;
+            margin: 0;
+        }
+        .valor-total{
+            display: inline-block;
+            float: right;
+            font-size: 12px;
+            text-align: right;
             padding: 0;
             margin: 0;
         }
@@ -111,20 +123,9 @@ $total = 0;
                 </tbody>
             </table>
             <p>-------------------------------------</p>
-            <div class="row p-0 m-0">
-                <p class="col s1 valorTotal">SubTotal:</p>
-                <p class="col s4"></p>
-                <p class="col s3 valorTotal">$ <?php echo $total; ?></p>
-            </div>
-            <div class="row p-0 m-0">
-                <p class="col s1 valorTotal">Descuento:</p>
-                <p class="col s4"></p>
-                <p class="col s3 valorTotal">$ <?php echo $total; ?></p>
-            </div>
-            <div class="row p-0 m-0">
-                <p class="col s1 valorTotal">Total:</p>
-                <p class="col s4"></p>
-                <p class="col s3 valorTotal">$ <?php echo $total; ?></p>
+            <div class="contenedor-total">
+                <p class="texto-total">Total:</p>
+                <p class="valor-total">$ <?php echo $total; ?></p>
             </div>
             <p id="last-node">-------------------------------------</p>
     </div>
@@ -135,6 +136,9 @@ $total = 0;
 <?php
 $html = ob_get_clean();
 
+// echo $html;
+// die;
+
 require_once 'dompdf/autoload.inc.php';
 
 use Dompdf\Dompdf;
@@ -143,6 +147,7 @@ $dompdf = new Dompdf();
 
 $options = $dompdf->getOptions();
 $options->set(array('isRemoteEnabled' => true));
+$options->setIsHtml5ParserEnabled(true);
 $dompdf->setOptions($options);
 
 $dompdf->loadHtml($html);

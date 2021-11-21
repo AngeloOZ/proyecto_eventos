@@ -7,9 +7,7 @@
   --frale: "Raleway", sans-serif;
   --ft-poppins: "Poppins", sans-serif;
 }
-body{
-  color: white;
-}
+
 html {
   scroll-behavior: smooth;
 
