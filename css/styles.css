@@ -678,13 +678,13 @@ p.price-pr-card span {
 }
 
 .btn_ver_recibo {
+  display: block;
   margin: auto;
   background-color: var(--morado);
   color: #fff;
   border-radius: 10px;
   text-align: center;
   border: none;
-  padding: 5px 20px;
   margin: 15px 0px;
 }
 

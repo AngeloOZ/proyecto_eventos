@@ -34,7 +34,7 @@ $compras =($compras== null)?[]:$compras;
             <?php echo $compra['total_factura'] ?>
                 </div>
             </div>
-            <b class="col"><a href="./pdf/recibo.php?f=<?php echo $dta_url;?>" class="btn btn_ver_recibo">Ver Recibo</a></b>
+            <b class="col"><a href="./pdf/recibo.php?f=<?php echo $dta_url;?>" class="btn btn_ver_recibo btn-purple">Ver Recibo</a></b>
         </div>
     </div>
 <?php
