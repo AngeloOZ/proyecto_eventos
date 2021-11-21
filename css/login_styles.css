@@ -87,6 +87,18 @@ form.sign-in-form {
   grid-template-columns: 15% 85%;
   padding: 0 0.4rem;
   position: relative;
+
+}
+
+
+input:-webkit-autofill,
+INPUT:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px hsl(210, 11%, 15%) inset;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: rgb(255, 255, 255);
 }
 
 .input-field i {
