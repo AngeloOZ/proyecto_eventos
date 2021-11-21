@@ -22,6 +22,7 @@ $total = 0;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <!-- <link rel="stylesheet" href="../css/pdf.css"> -->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -31,6 +32,10 @@ $total = 0;
     <title>recibo</title>
 
     <style>
+        html{
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
         body {
             text-align: center;
             font-family: 'Courier New', Courier, monospace
@@ -45,6 +50,7 @@ $total = 0;
         .contenedor {
             font-size: 12px;
             padding: 0;
+            padding-top: 40px;
             margin: 0;
             box-sizing: border-box;
         }
@@ -107,17 +113,17 @@ $total = 0;
             <p>-------------------------------------</p>
             <div class="row p-0 m-0">
                 <p class="col s1 valorTotal">SubTotal:</p>
-                <p class="col s5"></p>
+                <p class="col s4"></p>
                 <p class="col s3 valorTotal">$ <?php echo $total; ?></p>
             </div>
             <div class="row p-0 m-0">
                 <p class="col s1 valorTotal">Descuento:</p>
-                <p class="col s5"></p>
+                <p class="col s4"></p>
                 <p class="col s3 valorTotal">$ <?php echo $total; ?></p>
             </div>
             <div class="row p-0 m-0">
                 <p class="col s1 valorTotal">Total:</p>
-                <p class="col s5"></p>
+                <p class="col s4"></p>
                 <p class="col s3 valorTotal">$ <?php echo $total; ?></p>
             </div>
             <p id="last-node">-------------------------------------</p>
@@ -140,8 +146,16 @@ $options->set(array('isRemoteEnabled' => true));
 $dompdf->setOptions($options);
 
 $dompdf->loadHtml($html);
-$dompdf->setPaper(array(0, 0, 227.27, 400));
+$dompdf->setPaper(array(0, 0, 227.27,25));
 
 $dompdf->render();
+
+$page_count = $dompdf->getCanvas( )->get_page_number( );
+unset( $dompdf );
+
+$dompdf = new DOMPDF( );
+$dompdf->setPaper( array( 0 , 0 , 227.77 , 22 * $page_count ) );
+$dompdf->loadHtml( $html );
+$dompdf->render( );
 $dompdf->stream("archivo.pdf", array('Attachment' => false));
 ?>
