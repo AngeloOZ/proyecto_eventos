@@ -831,6 +831,7 @@ span#label-total {
 .contenedor-valoranos .text {
   font-family: var(--ft-poppins);
   font-size: 17px;
+  color: black;
 }
 
 .stars {
